@@ -1,0 +1,50 @@
+# translation of framework.po to Español
+#base_footer lang file
+#Copyright (C) 2003, miguel Development Team
+#Jesús Martínez, 2003
+# Jesús A. Martínez Cerezal <jamarcer@inicia.es>, 2004.
+#
+#, manual
+msgid ""
+msgstr ""
+"Project-Id-Version: framework\n"
+"POT-Creation-Date: 1\n"
+"PO-Revision-Date: 2004-08-13 17:28\n"
+"Last-Translator: Manuel R. Freire Santos <droggof@yahoo.es>\n"
+"Language-Team: Miguel <Miguel>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#:
+msgid "Guest"
+msgstr "Invitado"
+
+#:
+msgid "Wellcome"
+msgstr "Benvido"
+
+#:
+msgid "LoggedAs"
+msgstr "Acceso como"
+
+#:
+msgid "Campus"
+msgstr "Campus Virtual"
+
+#:
+msgid "Manager"
+msgstr "Responsable"
+
+#:
+msgid "Copyright"
+msgstr "Copyright &copy; 2003,2004 por"
+
+#:
+msgid "DevelopTeam"
+msgstr "Equipo de desenvolvemento de miguel"
+
+#:
+msgid "Licence"
+msgstr "miguel se distribúese baixo a licencia"
+

@@ -1,0 +1,421 @@
+# This file is distributed under the same license as the miguel package.
+# Copyright (C) 2003, 2004 miguel.
+# miguel Development Team <e-learning-desarrollo@listas.hispalinux.es>, 2004.
+# Jesús A. Martínez Cerezal <jamarcer@inicia.es>, 2004.
+#
+#,manual
+msgid ""
+msgstr ""
+"Project-Id-Version: setup\n"
+"POT-Creation-Date: 2004-08-13 17:56\n"
+"PO-Revision-Date: 2004-08-13 17:56\n"
+"Last-Translator: Manuel R. Freire Santos <droggof@yahoo.es>\n"
+"Language-Team: Miguel <Miguel>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: setup.php:
+msgid "setupIntro"
+msgstr "Sistema de configuracion da plataforma miguel"
+
+#: setup.php:
+msgid "setupDet"
+msgstr "Neste proceso axudarémoslle a preparar miguel para a súa posterior personalización"
+
+#: setup.php:
+msgid "step1"
+msgstr "Paso 1"
+
+#: setup.php:
+msgid "step1Des"
+msgstr "Extensións PHP necesarias"
+
+#: setup.php:
+msgid "step1Err1"
+msgstr "Necesita a extensión PHP"
+
+#: setup.php:
+msgid "step1Err2"
+msgstr "para continua-la configuración"
+
+#: setup.php:
+msgid "step1Ok"
+msgstr "A extensión está dispoñible"
+
+#: setup.php:
+msgid "step2"
+msgstr "Paso 2"
+
+#: setup.php:
+msgid "step2Des"
+msgstr "Directorio de instalación de miguel"
+
+#: setup.php:
+msgid "setupRoot"
+msgstr "Directorio de instalación de miguel non definido."
+
+#: setup.php:
+msgid "step3"
+msgstr "Paso 3"
+
+#: setup.php:
+msgid "step3Des"
+msgstr "Librerías externas"
+
+#: setup.php:
+msgid "step3b"
+msgstr "Paso 3 bis"
+
+#: setup.php:
+msgid "step3bDes"
+msgstr "Configuración do Sistema de Ficheiros para os datos"
+
+#: setup.php:
+msgid "fsAsk"
+msgstr "¿Utiliza-lo Sistema de Ficheiros por defecto? Os datos gardaranse todos baixo o directorio var/ e no directorio de instalación de miguel."
+
+#: setup.php:
+msgid "fsOk"
+msgstr "Sistema de Ficheiros de datos configurado."
+
+#: setup.php:
+msgid "fsErr"
+msgstr "miguel non está correctamente instalado. Comprobe a instalación."
+
+#: setup.php:
+msgid "setupLibs"
+msgstr "Librerías auxiliares non instaladas."
+#: setup.php:
+msgid "step4"
+msgstr "Paso 4"
+
+#: setup.php:
+msgid "step4Des"
+msgstr "Configuración do sistema de Cache"
+
+#: setup.php:
+msgid "step5"
+msgstr "Paso 5"
+
+#: setup.php:
+msgid "step5Des"
+msgstr "Configuración do sistema de Log"
+
+#: setup.php:
+msgid "step6"
+msgstr "Paso 6"
+
+#: setup.php:
+msgid "step6Des"
+msgstr "Configuración do sistema de Sesión"
+
+#: setup.php:
+msgid "step7"
+msgstr "Paso 7"
+
+#: setup.php:
+msgid "step7Des"
+msgstr "Xeneración dos ficheiros de configuración"
+
+#: setup.php:
+msgid "step7Err"
+msgstr "miguel non está correctamente instalado. Comprobe a súa instalación."
+
+#: setup.php:
+msgid "step7Ok"
+msgstr "Os ficheiros de configuración xa están dispoñibles"
+
+#: setup.php:
+msgid "step8"
+msgstr "Paso 8"
+
+#: setup.php:
+msgid "step8Des"
+msgstr "Instalación da base de datos de miguel"
+
+#: setup.php:
+msgid "step8Err"
+msgstr "A base de datos non foi instalada. Comprobe a súa instalación."
+
+#: setup.php:
+msgid "step8Ok"
+msgstr "Base de datos de miguel instalada correctamente"
+
+#: setup.php:
+msgid "finalMsg"
+msgstr "Configuración completada. ¡Gracias por usares miguel!"
+
+#: setup.class.php:
+msgid "noClassAvail"
+msgstr "O proceso de configuración non está dispoñible nun interfaz"
+
+#: setup_cli.class.php:
+msgid "intro"
+msgstr "Prema Intro para continuar ..."
+
+#: setup_cli.class.php:
+msgid "langLang"
+msgstr "Lingua"
+
+#: setup_cli.class.php:
+msgid "langConf"
+msgstr "configurado"
+
+#: setup_cli.class.php:
+msgid "rootAsk"
+msgstr "¿Está miguel instalado neste directorio?"
+
+#: setup_cli.class.php:
+msgid "opcSi"
+msgstr "Si"
+
+#: setup_cli.class.php:
+msgid "opcNo"
+msgstr "Non"
+
+#: setup_cli.class.php:
+msgid "opcY"
+msgstr "s"
+
+#: setup_cli.class.php:
+msgid "opcN"
+msgstr "n"
+
+#: setup_cli.class.php:
+msgid "rootInput"
+msgstr "Escribe a ruta do directorio onde está instalado miguel"
+
+#: setup_cli.class.php:
+msgid "rootOk"
+msgstr "miguel está instalado"
+
+#: setup_cli.class.php:
+msgid "rootErr"
+msgstr "O ficheiro especificado non existe."
+
+#: setup_cli.class.php:
+msgid "adoPath"
+msgstr "Escribe a ruta da librería ADOdb"
+
+#: setup_cli.class.php:
+msgid "adoOk"
+msgstr "Librería ADOdb instalada."
+
+#: setup_cli.class.php:
+msgid "adoErr"
+msgstr "Librería ADOdb non instalada. Comprobe a súa instalación."
+
+#: setup_cli.class.php:
+msgid "phlPath"
+msgstr "Escribe a ruta á librería phpHtmlLib"
+
+#: setup_cli.class.php:
+msgid "phlOk"
+msgstr "Librería phpHtmlLib instalada."
+
+#: setup_cli.class.php:
+msgid "phlErr"
+msgstr "Librería phpHtmlLib non instalada. Comprobe a súa instalación."
+
+#: setup_cli.class.php:
+msgid "cacheAsk"
+msgstr "¿Sistema de Caché activo?"
+
+#: setup_cli.class.php:
+msgid "cacheInt"
+msgstr "Intérvalo de espera, en segundos"
+
+#: setup_cli.class.php:
+msgid "cachePath"
+msgstr "Ruta ó directorio de Caché"
+
+#: setup_cli.class.php:
+msgid "cacheOk"
+msgstr "Atopado directorio de Caché"
+
+#: setup_cli.class.php:
+msgid "cacheErr"
+msgstr "O directorio de Caché non existe"
+
+#: setup_cli.class.php:
+msgid "logAsk"
+msgstr "¿Sistema de Log activo?"
+
+#: setup_cli.class.php:
+msgid "logType"
+msgstr "Tipo do sistema de Log"
+
+#: setup_cli.class.php:
+msgid "logTFile"
+msgstr "Log nun ficheiro"
+
+#: setup_cli.class.php:
+msgid "logTtable"
+msgstr "Log nunha tabla"
+
+#: setup_cli.class.php:
+msgid "logTPHP"
+msgstr "Log usando o sistema de PHP"
+
+#: setup_cli.class.php:
+msgid "logPath"
+msgstr "Ruta ó ficheiro de Log"
+
+#: setup_cli.class.php:
+msgid "logOk"
+msgstr "Atopado o ficheiro de Log"
+
+#: setup_cli.class.php:
+msgid "logErr"
+msgstr "O fichero de Log non existe."
+
+#: setup_cli.class.php:
+msgid "logTable"
+msgstr "Nombe da táboa"
+
+#: setup_cli.class.php:
+msgid "logCrit"
+msgstr "Só mostrar mensaxes con criticidade igual ou maior que"
+
+#: setup_cli.class.php:
+msgid "logD1"
+msgstr "Emerxencia. Sistema inutilizable."
+
+#: setup_cli.class.php:
+msgid "logD2"
+msgstr "Alerta. Requírese intervencion inmediata."
+
+#: setup_cli.class.php:
+msgid "logD3"
+msgstr "Crítico."
+
+#: setup_cli.class.php:
+msgid "logD4"
+msgstr "Erro."
+
+#: setup_cli.class.php:
+msgid "logD5"
+msgstr "Aviso."
+
+#: setup_cli.class.php:
+msgid "logD6"
+msgstr "Noticia."
+
+#: setup_cli.class.php:
+msgid "logD7"
+msgstr "Informativo."
+
+#: setup_cli.class.php:
+msgid "logD8"
+msgstr "Modo debug."
+
+#: setup_cli.class.php:
+msgid "logD9"
+msgstr "Todos."
+
+#: setup_cli.class.php:
+msgid "logD0"
+msgstr "Ningún."
+
+#: setup_cli.class.php:
+msgid "sessPath"
+msgstr "Ruta ó directorio de Sesións"
+
+#: setup_cli.class.php:
+msgid "sessOk"
+msgstr "Atopado o directorio de Sesións."
+
+#: setup_cli.class.php:
+msgid "sessErr"
+msgstr "O directorio de Sesións non existe."
+
+#: setup_cli.class.php:
+msgid "sessInt"
+msgstr "Intérvalo de vixencia dunha sesión, en minutos"
+
+#: setup_cli.class.php:
+msgid "createAsk"
+msgstr "¿Creamo-los ficheiros de configuración necesarios para a personalización?"
+
+#: setup_cli.class.php:
+msgid "createErr"
+msgstr "A xeneración dos ficheiros fallou. Comprobe a instalación."
+
+#: setup_cli.class.php:
+msgid "createOk"
+msgstr "Ficheiro de configuración creado."
+
+#: setup_cli.class.php:
+msgid "createInfo"
+msgstr "Necesita os ficheiros de configuración para continuar coa personalización e uso de miguel."
+
+#: setup_cli.class.php:
+msgid "ddbbSGBD"
+msgstr "Xestor da base de datos"
+
+#: setup_cli.class.php:
+msgid "ddbbHost"
+msgstr "Host onde reside o xestor"
+
+#: setup_cli.class.php:
+msgid "ddbbUser"
+msgstr "Usuario autorizado"
+
+#: setup_cli.class.php:
+msgid "ddbbPasswd"
+msgstr "Clave de acceso"
+
+#: setup_cli.class.php:
+msgid "ddbbName"
+msgstr "Nome da base de datos"
+
+#: setup_cli.class.php:
+msgid "ddbbConnOk"
+msgstr "Conectado correctamente"
+
+#: setup_cli.class.php:
+msgid "ddbbConnErr"
+msgstr "Fallo ó conectar coa base de datos. Comprobe os datos"
+
+#: setup_cli.class.php:
+msgid "ddbbNameOk"
+msgstr "A base de datos xa existe"
+
+#: setup_cli.class.php:
+msgid "ddbbNameErr"
+msgstr "A base de datos non existe"
+
+#: setup_cli.class.php:
+msgid "ddbbCreate"
+msgstr "Creando a base de datos especificada"
+
+#: setup_cli.class.php:
+msgid "ddbbCreateErr"
+msgstr "Non puido crearse a base de datos especificada. Por favor, fágao manualmente"
+
+#: setup_cli.class.php:
+msgid "ddbbCreateOk"
+msgstr "Base de datos especificada creada correctamente"
+
+#: setup_cli.class.php:
+msgid "ddbbTableOk"
+msgstr "Base de datos instalada"
+
+#: setup_cli.class.php:
+msgid "ddbbTableErr"
+msgstr "Error ó crea-la base de datos"
+
+#: base_CLI.class.php:
+msgid "fatalErr"
+msgstr "¡Error Fatal!"
+
+#: base_CLI.class.php:
+msgid "choice"
+msgstr "Escriba a súa selección"
+
+#: base_CLI.class.php:
+msgid "notValid"
+msgstr "non é unha selección válida."
+
+
