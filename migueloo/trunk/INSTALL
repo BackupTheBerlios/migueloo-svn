@@ -1,0 +1,153 @@
+Instalación de miguel (aka andromeda)
+=======================================
+
+1.- Requisitos.
+---------------
+
+Antes de instalar miguel hay que comprobar que se tiene un 
+servidor web funcionando (normalmente un Apache) con soporte 
+PHP/MySQL.
+
+PHP debe tener, además, los módulos: zlib y gettext.
+
+
+2.- Librerías.
+--------------
+
+miguel utiliza 4 librerías de desarrollo "externo":
+
+* MiniXML [http://minixml.psychogenic.com/]: API para generar 
+  y parsear XML. [Está integrada, no hace falta instalarla].
+  
+* ADOdb [http://adodb.sourceforge.net/]: Para accesos a BBDD 
+  independientemente del SGBD. Se usa la versión 4.2.2.
+  
+* phpHtmlLib [http://phphtmllib.newsblob.com/]: API para la 
+  generación de documentos XML, HTML, XHTML, WAP/WML e imagenes 
+  SVG (Scalable Vector Graphics). Se usa la versión 2.4.1.
+
+* pclzip [http://www.phpconcept.net/pclzip/index.en.php]: librería 
+  para la manipulación de ficheros en formato zip. Versión 2.1
+  
+¿Cómo instalarlas?
+Una vez descargadas desde los enlaces, se descomprimen y se 
+mueven al directorio root del apache:
+
+
+3.- Instalar miguel.
+----------------------
+
+Al igual que las librerías, miguel debe estar instalado en el 
+directorio root del apache.
+
+[Si se ha descargado del cvs bastaría con moverlo. Y si se tiene 
+un fichero tar.gz o tgz antes tendríamos que descomprimirlo].
+
+
+ATENCION: ES NECESARIO para el correcto funcionamiento de la 
+herramienta que los directorios (y contenido) bajo migueloo/var/:
+
+bibliography/
+cache/
+data/
+secretary/
+temp/
+
+sean propiedad del usuario y grupo del apache, y sean de lectura 
+escritura para el propietario.
+
+**Preparar la base de datos**
+Es necesario preparar la base de datos. Hay que crear la base de 
+datos y poblarla.
+
+Se usa como SGBD MySQL. Se podría usar cualquiera de los que
+soporta ADOdb.
+
+Es necesario tener un usuario con permisos. Como por defecto al
+instalarse MySQL (en una Mandrake) se define un usuario: root con
+clave: <vacía>, voy a usarlo así en el ejemplo. 
+
+Instalando:
+1) Crear la base de datos miguel (podéis poner otro nombre):
+   Abrimos un terminal de comandos de mysql con el usuario:
+      mysql -uroot -p
+   Creamos la base de datos escribiendo:
+      CREATE DATABASE miguel;
+   Debe respondernos con un "Query OK, 1 row affected(xxxx sec).
+   Y salimos del terminal de comandos:
+      \q   
+	  
+2) Cargamos las tablas. Para eso usaremos el fichero con las 
+definiciones en doc/sql/miguel.sql. 
+
+Haríamos:
+    mysql -uroot -p <<nombre_base_de_datos>>  < /path_a_miguel/doc/sql/miguel.sql
+
+Y tenemos la base de datos lista.
+
+
+4.- Configuración de miguel
+-----------------------------
+
+Dado que estamos en proceso de desarrollo deberemos hacerlo de 
+forma manual.
+
+a) Configuración de miguel: fichero modules/common/miguel_base.inc.php.
+Para tener operativo miguel sólo hay que tocar las líneas:
+
+define("MIGUEL_LOCALPATH", "miguel"); 
+
+Cambiar <miguel> por el nombre del directorio bajo el que está miguel en 
+el directorio root de apache.
+
+define('MIGUEL_APPDIR', '/var/www/html'.'/'.MIGUEL_LOCALPATH.'/');
+
+Cambiar <'/var/www/html/'> por <'/path_al_directorio_root_de_apache'>
+
+b) Configuración del framework: fichero modules/andromeda/framework.inc.php.
+Para configurar el framework basta con tocar las líneas:
+
+define('MIGUELBASE_PHPHTMLLIB', MIGUEL_ROOT_DIR.'/phphtmllib');
+define('MIGUELBASE_ADODB', MIGUEL_ROOT_DIR.'/adodb');
+define('MIGUELBASE_MINIXML', MIGUEL_ROOT_DIR.'/miniXML');
+define('MIGUELBASE_PCLZIP', MIGUEL_ROOT_DIR.'/pclzip');
+
+En todas, cambiar el nombre por el que habéis usado.
+
+
+c) Configuración de la base de datos: fichero modules/common/include/config.xml.
+Sólo tendremos en cuenta los elementos:
+
+<ddbbSgbd> mysql </ddbbSgbd>          SGBD usado: MySQL
+<ddbbServer> localhost </ddbbServer>  Host
+<ddbbUser> root </ddbbUser>           Usuario con permisos:
+<ddbbPassword>  </ddbbPassword>       Clave del usuario
+<ddbbMainDb> miguel </ddbbMainDb>     Nombre de la BBDD.
+
+Si se usan los valores que he ido usando ya estaría.
+
+
+5.- Ejecución de miguel.
+--------------------------
+
+Abrimos un navegador nuestro navegador web favorito y escribimos:
+
+http://localhost/<directorio_donde_instalamos_miguel>
+
+Y, ¡ya está!
+
+
+6.- Información adicional.
+--------------------------
+
+Hay varios usuarios "predefinidos":
+admin <admin> con perfil de administrador
+alumno <alumno> con perfil de alumno
+profesor <profesor> con perfil profesor
+secretaria <secretaria> con perfil secretaría
+guest <guest> con perfil de invitado
+
+El usuario "afinado" es el de alumno ;)
+
+Jesús Martínez
+<jamarcer AT inicia DOT es>

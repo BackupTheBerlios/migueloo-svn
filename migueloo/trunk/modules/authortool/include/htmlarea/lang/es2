@@ -1,0 +1,88 @@
+// I18N constants
+
+// LANG: "en", ENCODING: UTF-8 | ISO-8859-1
+// Authors: ??, Eduardo Robles Elvira http://migueloo.berlios.de/
+
+// FOR TRANSLATORS:
+//
+//   1. PLEASE PUT YOUR CONTACT INFO IN THE ABOVE LINE
+//      (at least a valid email address)
+//
+//   2. PLEASE TRY TO USE UTF-8 FOR ENCODING;
+//      (if this is not possible, please include a comment
+//       that states what encoding is necessary.)
+
+HTMLArea.I18N = {
+
+	// the following should be the filename without .js extension
+	// it will be used for automatically load plugin language.
+	lang: "es",
+
+	tooltips: {
+		bold:           "Negrita",
+		italic:         "Cursiva",
+		underline:      "Subrayado",
+		strikethrough:  "Tachado",
+		subscript:      "Subíndice",
+		superscript:    "Superíndice",
+		justifyleft:    "Alinear a la Izquierda",
+		justifycenter:  "Centrar",
+		justifyright:   "Alinear a la Derecha",
+		justifyfull:    "Justificar",
+		orderedlist:    "Lista Ordenada",
+		unorderedlist:  "Lista No Ordenada",
+		outdent:        "Aumentar Sangría",
+		indent:         "Disminuir Sangría",
+		forecolor:      "Color del Texto",
+		hilitecolor:    "Color del Fondo",
+		horizontalrule: "Línea Horizontal",
+		createlink:     "Insertar Enlace",
+		insertimage:    "Insertar Imagen",
+		inserttable:    "Insertar Tabla",
+		htmlmode:       "Ver Documento en HTML",
+		popupeditor:    "Ampliar Editor",
+		about:          "Acerca del Editor",
+		showhelp:       "Ayuda",
+		textindicator:  "Estilo Actual",
+		undo:           "Deshacer",
+		redo:           "Rehacer",
+		cut:            "Cortar selección",
+		copy:           "Copiar selección",
+		paste:          "Pegar desde el portapapeles",
+		lefttoright:    "Dirección de derecha a izquierda",
+		righttoleft:    "Dirección de izquierda a derecha"
+	},
+
+	buttons: {
+		"ok":           "Aceptar",
+		"cancel":       "Cancelar"
+	},
+
+	msg: {
+		"Path":         "Ruta",
+		"TEXT_MODE":    "Esta en modo TEXTO. Use el boton [<>] para cambiar a WYSIWIG",
+
+		"IE-sucks-full-screen" :
+		// translate here
+		"Tenemos conocimiento de que hay  problemas con el modo a pantalla completa en el Internet Explorer, " +
+		"debido a errores del navegadores que no pudimos arreglar. Es posible que experimente problemas de visualización, " +
+		"falta de funciones en el editor y/o cierres repentinos y aleatorios del navegador.  Si Ud. usa  Windows 9x " +
+		"es muy posible que se produzca un 'Fallo general de protección' y necesite un reinicio.\n\n" +
+		"Ya le hemos avisado.  Pro favor, preosion Aceptar si aun quiere probatrPlease press OK if you still want to try the full screen editor."
+	}
+
+	dialogs: {
+		"Cancel"                                            : "Cancelar",
+		"Insert/Modify Link"                                : "Insertar/Modificar Enlace",
+		"New window (_blank)"                               : "Nueva ventana (_blank)",
+		"None (use implicit)"                               : "Ninguno (heredar/por defecto)",
+		"OK"                                                : "Aceptar",
+		"Other"                                             : "Otro",
+		"Same frame (_self)"                                : "En el mismo marco (_self)",
+		"Target:"                                           : "Target:",
+		"Title (tooltip):"                                  : "Título (tooltip):",
+		"Top frame (_top)"                                  : "Marco superior (_top)",
+		"URL:"                                              : "URL:",
+		"You must enter the URL where this link points to"  : "Ha de escribir la URL a la que apunta el enlace"
+	}
+};

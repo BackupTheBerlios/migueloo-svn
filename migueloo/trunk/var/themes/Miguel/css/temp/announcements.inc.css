@@ -1,0 +1,12 @@
+/*
+General styles
+*/
+.month {
+    font-weight : bold;
+    color : #FFFFFF;
+    background-color : #000066;
+    padding-left : 15px;
+    padding-right : 15px;
+ }
+
+.content {position: relative; left: 25px;}

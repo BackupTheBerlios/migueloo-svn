@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+  <siteName> e-Learnig en SHS Polar </siteName>
+  <Institution> SHS Polar SI, S.L. </Institution>
+  <InstitutionUrl> http://www.polar.es </InstitutionUrl>
+  <logo_ini> logo00.png </logo_ini>
+  <texto_ini> intro.html </texto_ini>
+  <language> es_ES </language>
+  <theme> tpb </theme>
+  <emailAdministrator> root@localhost </emailAdministrator>
+  <administratorName> Juan </administratorName>
+  <administratorSurname> Español </administratorSurname>
+  <educationManager> Juan Español </educationManager>
+  <telephone> (515) 648 208 </telephone>
+  <mainInterfaceWidth> 100% </mainInterfaceWidth>
+</config>

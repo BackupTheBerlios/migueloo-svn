@@ -1,0 +1,170 @@
+<?php
+/*
+	  +----------------------------------------------------------------------+
+	  |newInscription/view                                                   |
+	  +----------------------------------------------------------------------+
+	  | Copyright (c) 2004, SHS Polar Sistemas Informáticos, S.L.            |
+	  +----------------------------------------------------------------------+
+	  |   This program is free software; you can redistribute it and/or      |
+	  |   modify it under the terms of the GNU General Public License        |
+	  |   as published by the Free Software Foundation; either version 2     |
+	  |   of the License, or (at your option) any later version.             |
+	  |                                                                      |
+	  |   This program is distributed in the hope that it will be useful,    |
+	  |   but WITHOUT ANY WARRANTY; without even the implied warranty of     |
+	  |   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the      |
+	  |   GNU General Public License for more details.                       |
+	  |                                                                      |
+	  |   You should have received a copy of the GNU General Public License  |
+	  |   along with this program; if not, write to the Free Software        |
+	  |   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA          |
+	  |   02111-1307, USA. The GNU GPL license is also available through     |
+	  |   the world-wide-web at http://www.gnu.org/copyleft/gpl.html         |
+	  +----------------------------------------------------------------------+
+	  | Authors: SHS Polar Sistemas Informáticos, S.L. <www.polar.es>        |
+	  |          Equipo de Desarrollo Software Libre <jmartinezc@polar.es>   | 
+	  |          miguel Development Team                                     |
+	  |                       <e-learning-desarrollo@listas.hispalinux.es>   |      
+	  +----------------------------------------------------------------------+
+*/
+/**
+ * Define la clase para la pantalla principal de miguel.
+ *
+ *
+ * Utiliza la libreria phphtmllib.
+ *
+ * @author Jesus A. Martinez Cerezal <jamarcer@inicia.es>
+ * @author miguel development team <e-learning-desarrollo@listas.hispalinux.es>     
+ * @package miguel base
+ * @subpackage view
+ * @version 1.0.0
+ *
+ */ 
+
+/**
+ * Include classes library
+ */
+include_once (Util::app_Path("common/view/classes/miguel_vmenu.class.php"));
+
+class miguel_VProfile extends miguel_VMenu
+{
+	function miguel_VProfile($title, $arr_commarea)
+	{
+		$this->miguel_VMenu($title, $arr_commarea);
+	}
+
+
+	function main_block()
+	{
+		//Contenedor principal
+		$content = container();
+
+		//Añade el menu principal 
+		$content->add($this->add_mainMenu());
+
+		//Añade linea
+		$content->add(html_br());
+
+		//Añade contenido
+		$content->add($this->content_section());
+
+		//Añade linea
+		$content->add(html_br());
+				
+		return $content;
+	}
+
+
+    function add_mainMenu()
+    {
+
+            $div = html_div('');
+            $div->add(html_br());
+
+            $table = &html_table(Session::getContextValue('mainInterfaceWidth'),0,0,0);
+            $row = html_tr();
+            $blank = html_td('', '', html_img(Theme::getThemeImagePath("invisible.gif"),10,10));
+            //$blank->set_tag_attribute('colspan','4');
+
+            $image = html_td('', '',  html_img(Theme::getThemeImagePath("invisible.gif"), 20, 14));
+            $image->set_tag_attribute('align', 'right');
+            $image->set_tag_attribute('width', '40%');
+
+            $link = html_a(Util::format_URLPath("profileManager/index.php",'submit=New'), agt('Nuevo perfil'), null, "_top");
+            $link->set_tag_attribute('class', 'bannera');
+            $item1 = html_td('banner', '', $link);
+            $item1->set_tag_attribute('width', '20%');
+
+            /*$link = html_a(Util::format_URLPath("profileManager/index.php",'submit=del'), agt('Baja perfil'), null, "_top");
+            $link->set_tag_attribute('class', 'bannera');
+            $item2 = html_td('banner', '', $link);
+            $item2->set_tag_attribute('width', '20%');
+			*/
+            $row->add($blank);
+            $row->add($image);
+            $row->add($item1);
+            //$row->add($item2);
+
+            $table->add_row($row);
+
+            $div->add($table);
+
+            return $div;
+    }
+
+
+	
+	function content_section()
+    {
+        
+        $table = html_table(Session::getContextValue('mainInterfaceWidth'),0,0,0);
+              
+       	$title = 'Perfiles';
+       	
+       	$table_form = $this->add_profile_form();
+       	//$table_list = $this->add_profile_list();
+
+        $table->add_row(html_td('titulo', '', $title));
+        $table->add_row(html_td('titulo03', '', _HTML_SPACE));
+        
+        if ($this->issetViewVariable('strError')) {
+        	$strError = $this->getViewVariable('strError');
+        	$table->add_row(html_td('titulo03', '', html_h2($strError)));	
+        	$table->add_row(html_td('titulo03', '', _HTML_SPACE));
+        }
+
+        $table->add_row(html_td('titulo03', '', $table_form));
+       	/*if ($table_list != null){
+       		$table->add_row(html_td('titulo03', '', $table_list));
+       	}else{
+       		$table->add_row(html_td('titulo03', '', html_h2('No existen perfiles')));
+       	}*/
+
+        $table->add_row(html_td('titulo03', '', _HTML_SPACE));
+        $table->add_row(html_td('piecaja', '', $title));
+
+        return $table;
+    }
+
+
+ 	function add_profile_form()
+ 	{
+ 		$content = container();
+ 		
+ 		$content->add($this->addForm('profileManager', 'miguel_profileForm'));	
+ 		
+ 		return $content;
+ 	}
+
+ 	/*function add_profile_list()
+ 	{
+ 		$content = container();
+ 		
+ 		$content->add($this->addForm('profileManager', 'miguel_profileListForm'));	
+ 		
+ 		return $content;
+ 	}*/
+ 	
+}
+
+?>

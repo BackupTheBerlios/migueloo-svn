@@ -1,0 +1,25 @@
+.menuskin{
+position:absolute;
+background-color:#80CE80;
+border:0px solid black;
+font:normal medium Verdana;
+line-height:18px;
+z-index:100;
+visibility:hidden;
+}
+
+.menuskin a{
+text-decoration:none;
+color:black;
+padding-left:10px;
+padding-right:10px;
+}
+
+#mouseoverstyle{
+background-color:highlight;
+}
+
+#mouseoverstyle a{
+color:white;
+}
+

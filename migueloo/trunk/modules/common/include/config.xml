@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+ <config>
+  <siteName> Campus miguel (pre-alfa) </siteName>
+  <Institution> Miguel </Institution>
+  <InstitutionUrl> https://developer.berlios.de/projects/migueloo/ </InstitutionUrl>
+  <logo_ini> logo.png </logo_ini>
+  <texto_ini> wellcomeMiguel.html </texto_ini>
+  <ddbbSgbd> mysql </ddbbSgbd>
+  <ddbbMainDb> BASE DATOS </ddbbMainDb>
+  <ddbbServer> localhost </ddbbServer>
+  <ddbbUser> USUARIO </ddbbUser>
+  <ddbbPassword> CLAVE </ddbbPassword>
+  <language> es_ES </language>
+  <theme> Miguel </theme>
+  <emailAdministrator> root@localhost </emailAdministrator>
+  <administratorName> Juan </administratorName>
+  <administratorSurname> Español </administratorSurname>
+  <educationManager> Juan Español </educationManager>
+  <telephone> (515) 648 208 </telephone>
+  <maxFilledSpaceUser> 100000 </maxFilledSpaceUser>
+  <maxFilledSpaceAdmin> 1000000 </maxFilledSpaceAdmin>
+  <mainInterfaceWidth> 100% </mainInterfaceWidth>
+  <mainInterfaceType> toolbar </mainInterfaceType>
+  <miguelVersion> 0.5 </miguelVersion>
+  <versionDb> 2.0 </versionDb>
+  <userMailCanBeEmpty> true </userMailCanBeEmpty>
+  <userPasswordCrypted> true </userPasswordCrypted>
+ </config>

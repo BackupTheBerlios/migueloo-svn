@@ -1,0 +1,4 @@
+!#/bin/bash
+clear
+SETUP_FILE=`pwd`/lib/setup/setup.php
+php -f $SETUP_FILE $* 

@@ -1,0 +1,67 @@
+
+.m0l0iout {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-align:center;
+	text-decoration: none;
+	padding: 3px;
+	color: #1e9cd6;
+	border-left-color: #1e9cd6;
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+.m0l0iover {
+	font: 11px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+	padding: 3px;
+	text-align:center;
+	color: #1e9cd6;
+	border-left-color: #1e9cd6;
+	border-left-style: solid;
+	border-left-width: 1px;	
+}
+
+
+.m0l0oout {
+	text-decoration : none;
+	background: #1e9cd6;
+}
+.m0l0oover {
+	text-decoration : none;
+	background: #94c5d8;
+}
+
+
+.m0l1iout {
+	font: 11px  Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	text-align:center;
+	padding: 4px;
+	color: #000000;
+	border-top-color: #ffFFFF;
+	border-top-style: solid;
+	border-top-width: 2px;
+}
+.m0l1iover {
+	font:  11px  Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-decoration : none;
+	text-align:center;
+	padding: 4px;
+	color: #ffffff;
+	border-top-color: #ffFFFF;
+	border-top-style: solid;
+	border-top-width: 2px;
+}
+
+
+.m0l1oout {
+	text-decoration : none;	
+	background: #DCDADA;
+	filter: alpha(opacity=80);
+}
+.m0l1oover {
+	text-decoration : none;
+	background: #1e9cd6;
+	filter: alpha(opacity=80);
+}

@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"POT-Creation-Date: 1\n"
+"PO-Revision-Date: 2003-10-24 19:39+0100\n"
+"Last-Translator: Eduardo Robles <edulix AT iespana DOT es>\n"
+"Language-Team:  Miguel <Miguel>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: prueba.php:23
+msgid "bad referer"
+msgstr "Parece que Ud. ha accedido a esta página deliberdamente o que está usando un navegador web que no nos "
+"permite saber si verdaderamente ocurrió un error o no, así que el error teóricamente solicitado será mostrado pero "
+"no constará en el registro de errores."
+"<br>\nSi verdaderamente se produjo un error, por favor, envíenos (a los desarrolladores de Miguel) un <a " "href=\"mailto:e-learning-desarrollo@listas.hispalinux.es\">email</a> explicando su situación de tal manera que la " "podamos reproducir y arreglar o contacte con el administrador."
+
+#: prueba.php:24
+msgid "given error code wasn't recognized"
+msgstr "Esta es una página que muestra errores, pero el código de error dado fue reconocido, así que no podemos "
+"decirle que es sucedió, en el supuesto de que realmente hubo algún problema."
+"<br>\nSi este es su caso, por favor, envíenos (a los desarrolladores de Miguel) un <a " "href=\"mailto:e-learning-desarrollo@listas.hispalinux.es\">email</a> explicando su situación de tal manera que la " "podamos reproducir y arreglar."
+
+#: prueba.php:25
+msgid "no error code was given"
+msgstr "Esta es una página que muestra errores, pero no se proveyó ningún código de error así que no podemos "
+"decirle que sucedió, en el supuesto de que realmente hubo algún problema. "
+"Por favor, envíenos (a los desarrolladores de Miguel) un <a "
+"href=\"mailto:e-learning-desarrollo@listas.hispalinux.es\">email</a> explicando su situación de tal manera que la "
+"podamos reproducir y arreglar."
+
+#: prueba.php:26
+msgid "unable to connect to the db"
+msgstr "¡ ATENCIÓN ! EL SISTEMA NO PUDO CONECTAR CON EL SERVIDOR DE BASE DE DATOS "
+"<br>\nSi se trata del primer uso, lea INSTALL.es.txt y luego vaya al asistente web de instalación"
+
+#: prueba.php:27
+msgid "unable to select the main miguel db"
+msgstr "¡ ATENCIÓN ! EL SISTEMA NO PUDO SELECIONAR EL SERVIDOR DE BASE DE DATOS "
+"<br>\nSi se trata del primer uso, lea INSTALL.es.txt y luego vaya al asistente web de instalación"
+
+#: prueba.php:28
+msgid "someone not allowed to see the content of the page"
+msgstr "¡ ATENCIÓN ! Ud. no tiene permiso para ver la página solicitada. Por favor, entre con los permisos "
+"adecuados."
+
+#: prueba.php:29
+msgid "a requested file couldn't be read"
+msgstr "¡ ATENCIÓN ! El archivo solicitado no pudo ser leído. <br>\nPor favor, envíenos (a los desarrolladores de "
+"Miguel) un <a href=\"mailto:e-learning-desarrollo@listas.hispalinux.es\">email</a> explicando su situación de tal " "manera que la podamos reproducir y arreglar."
+
+#: prueba.php:30
+msgid "session lost in a course"
+msgstr "¡ ATENCIÓN ! Se cerró su sesión, por favor vuelva a la página principal del curso y actualice la pantalla."
+
+#: prueba.php:31
+msgid "cours doesn't exist"
+msgstr "¡ ATENCIÓN ! Este curso no existe."
+
+#: prueba.php:32
+msgid "config file couldn't be included"
+msgstr "¡ ATENCIÓN ! El archivo de configuración no pudo ser leído. Contacte con el administrador, o si Ud. es el "
+"administrador, o bien reinstale miguel, restaure el fichero de configuración o dele los permisos adecuados"

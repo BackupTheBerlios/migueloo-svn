@@ -1,0 +1,154 @@
+/************************************************************
+                          The header
+************************************************************/
+
+/*
+the alignment of the main table
+*/
+
+body > div
+{
+    text-align:       center;
+}
+
+td
+{
+padding-top: 5pt;
+padding-bottom: 5pt;
+padding-left: 8pt;
+padding-right: 5pt;
+}
+
+/*
+the Main table
+*/
+body > div > table
+{
+    /*margin:           1px 1px 1px 1px;*/
+    /*padding:          0 0 0 0;*/
+    border:           0;
+}
+
+/*
+the header table
+*/
+table#header
+{
+    border:           0;
+    margin-bottom:    0;
+    margin-top:       0;
+}
+table#header td
+{
+
+    padding:          2pt;
+}
+
+/*
+the style for miguel logo cell
+*/
+table#header td#cell-logo
+{
+    font-size:        medium;
+    color:            #FFFFFF;
+    text-align:       left;
+}
+
+/*
+the style for the sitename cell
+*/
+table#header td#cell-sitename, table#header td#cell-sitename a
+{
+    font-size:        medium;
+    color:            #FFFFFF;
+    text-align:       center;
+}
+
+/*
+the style for the indetec cell
+*/
+table#header td#cell-indetec, table#header td#cell-indetec a
+{
+    font-size:        medium;
+    text-align:       center;
+}
+
+/*
+the style for the department cell (it appears only when you're into a department)
+*/
+table#header td#cell-department, table#header td#cell-department a
+{
+    font-size:        medium;
+    color:            #FFFFFF;
+    text-align:       center;
+}
+
+/*
+the style for the institution cell
+*/
+table#header td#cell-institution, table#header td#cell-institution a
+{
+    text-align:       center;
+    font-size:        medium;
+    color:            #FFFFFF;
+    font-weight:      bold;
+}
+
+/*
+Navigation links cell
+*/
+table#header tr#cell-nav-links, table#header tr#cell-nav-links a
+{
+    font-size:        10px;
+}
+
+/*
+Help cell
+*/
+table#header td#cell-help, table#header td#cell-help a
+{
+    text-align:       center;
+    font-size:        medium;
+}
+
+/*
+Course cell
+*/
+table#header tr#cell-course
+{
+    color:            #666666;
+    font-weight:      bold;
+    font-size:        medium;
+}
+
+/*
+The Course cell only link has a diferent style
+*/
+table#header tr#cell-course a
+{
+    color:            #666666;
+    font-size:        medium;
+    font-weight:      bold;
+}
+
+/*
+The style of the advertissment cell
+*/
+tr#cell-adv
+{
+    color:            red;
+    text-align:       left;
+}
+
+/************************************************************
+                          The footer
+************************************************************/
+table#footer
+{
+    vertical-align:   top;
+    font-size:        small;
+}
+table#footer td
+{
+    padding:          2pt;
+}

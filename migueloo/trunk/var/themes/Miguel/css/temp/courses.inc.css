@@ -1,0 +1,30 @@
+/*
+   The main table style
+*/
+th, td
+{
+    font-size: x-small;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.textStyle {
+    border: 0px;
+    background-color: White;
+    color: Blue;
+    text-decoration: underline;
+}
+
+table.list tr td.add
+{
+    background-color: <?php echo $color2 ?>;
+}
+
+table.list tr td.rem
+{
+    background-color: <?php echo $color1 ?>;
+}
+
+table.list tr th
+{
+    border: 1px solid grey;
+}

@@ -1,0 +1,30 @@
+.notethis
+{
+    border:           thin double Black;
+    margin-left:      15px;
+    margin-right:     15px;
+}
+table#install
+{
+    border:           0;
+}
+textarea#gpl
+{
+    overflow:         auto;
+}
+h2#config-permissions-problem
+{
+    color:            red;
+}
+blockquote#values
+{
+   font-size:         9px;
+}
+div.correct-align
+{
+   text-align:        right;
+}
+div#confirm-align
+{
+   text-align:        center;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+<urlAppend> /miguel </urlAppend>
+<webDir> /Library/Webserver/Documents/andromeda </webDir>
+<phpMyAdminURL> ../admin/mysql/ </phpMyAdminURL>
+<serverAddress> http://10.45.1.200/andromeda/ </serverAddress>
+<basedir> /Library/WebServer/Documents/andromeda/app/ </basedir> 
+<urlServer> http://10.45.1.200/andromeda/ </urlServer>
+<siteName> miguel(OO) </siteName>
+<Institution> Hispalinux </Institution>
+<InstitutionUrl> http://www.hispalinux.es </InstitutionUrl>
+<ddbbSgbd> mysql </ddbbSgbd>
+<ddbbServer> localhost </ddbbServer>
+<ddbbUser> yursoft </ddbbUser>
+<ddbbPassword> yurasg </ddbbPassword>
+<ddbbMainDb> andromeda </ddbbMainDb>
+<language> spanish </language>
+<emailAdministrator> root@localhost </emailAdministrator>
+<administratorName> Juan </administratorName>
+<administratorSurname> Español </administratorSurname>
+<educationManager> Juan Español </educationManager>
+<telephone> (515) 648 208 </telephone>
+<maxFilledSpaceUser> 1000000 </maxFilledSpaceUser>
+<maxFilledSpaceAdmin> </maxFilledSpaceAdmin>
+<CourseProgram> http://www.ucl.ac.be/etudes/cours </CourseProgram>
+<color1> #F5F5F5 </color1>
+<color2> #E6E6E6 </color2>
+<colorLight> #99CCFF </colorLight>
+<colorMedium> #6699FF </colorMedium>
+<colorDark> #000066 </colorDark>
+<bgcolor> white </bgcolor>
+<mainInterfaceWidth> 100% </mainInterfaceWidth>
+<miguelVersion> 2.0.0 </miguelVersion>
+<versionDb> 2.0.0 </versionDb>
+<userMailCanBeEmpty> true </userMailCanBeEmpty>
+<userPasswordCrypted> true </userPasswordCrypted>
+<gettext_lang> es_ES </gettext_lang>
+<gettext_domain> main </gettext_domain>
+<typeLogin> BBDD </typeLogin>
+<typeEncrypt> MCRYPT </typeEncrypt>
+<typeEncryptMcrypt> RIJNDAEL-256 </typeEncryptMcrypt>
+</config>

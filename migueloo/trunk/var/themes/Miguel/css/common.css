@@ -1,0 +1,530 @@
+/**
+ * This style sheet defines the apperance of the MiguelOO.
+ 
+ * @author Néstor Díaz
+ * @status Part of MiguelOO, licensed under GPL.
+ * $Id: common.css,v 1.2 2004/08/05 00:43:54 chet Exp $
+ */
+
+/* the whole browser area */
+body {
+	background-color:white;
+	font-family: Verdana ,  Arial ,  Helvetica ,  sans-serif;
+	font-size: medium;
+	width: 98%;
+}
+
+table {
+	color: #000000;
+	background-color:transparent;
+}
+
+/* table head / heading */
+th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: transparent;
+}
+
+/* an ordinary table cell */
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	color: #000000;
+	/*background-color: #90b2b1;*/
+	background-color: transparent;
+	/*padding-left: 4pt;*/
+	padding-right: 3pt;
+	padding-top: 0pt;
+	vertical-align: top;
+}
+
+#content{
+background-color: #edf5f8;
+vertical-align: top;
+padding: 0pt;
+}
+
+/* to be used in forms and with variables for invisible tables (column layout) */
+table.layout {
+	color: #000000;
+	background-color: transparent;
+}
+
+/* to be used in forms and  with variables for invisible tables (column layout) */
+td.layout {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	color: #000000;
+	background-color: transparent;
+}
+
+H1 {
+	font-family: Arial ,  Helvetica ,  sans-serif;
+	font-size: x-large;
+	font-weight: bold;
+	color:#ff6400;
+	background-color: transparent;
+	margin-bottom: 6pt;
+	margin-top: 6pt;
+	padding: 0pt;
+}
+
+H2 {
+	font-family: Arial ,  Helvetica ,  sans-serif;
+	font-size: large;
+	font-weight: bold;
+	color:#f08824;
+	background-color: transparent;
+	margin-top: 4pt;
+	margin-bottom: 4pt;
+}
+
+H3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-weight: bold;
+	color: #73c200;
+	background-color: transparent;
+	margin-bottom: 4pt;
+	margin-top: 2pt;
+}
+
+H4 {
+	font-family: Arial ,  Helvetica ,  sans-serif;
+	font-size: medium;
+	font-weight: normal;
+	color: black;
+	background-color: white;
+	padding-left: 10pt;
+}
+
+H5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-weight: bold;
+	color: #666666;
+	background-color: transparent;
+}
+
+H6 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-weight: normal;
+	font-style: italic;
+	color: #333333;
+	background-color: transparent;
+}
+
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	margin-top: 6pt;
+	margin-bottom: 12pt;
+}
+
+/* a section, used by alignment center, right */
+div {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*font-size: 12pt;*/
+}
+
+.
+
+
+/* predefined text, usually source code */
+pre {
+	font-family: Courier, monospace;
+	font-size: small;
+	border-style: solid;
+	border-color: #000066;
+	border-width: 0pt 0pt 0pt 1pt;
+	padding-left: 4pt;
+	margin-left:  2pt;
+}
+
+/* formatted as gray box */
+blockquote {
+	color: #000000;
+	background-color: #e7dfae;
+	border-style: solid;
+	border-color: #000066;
+	border-width: 1pt;
+	margin: 1pt;
+	padding: 1pt;
+	font-size: small;
+}
+
+/** second level */
+blockquote blockquote {
+	margin: 2pt 20pt 2pt 20pt;
+	color: #000000;
+	background-color: #c7c7c7;
+}
+
+/* a definition list */
+dl {
+	border-style: solid;
+	border-color: #ccccff;
+	border-width: 1pt;
+	padding: 2pt;
+}
+
+/* a definition term inside a definition list */
+dt {
+	font-weight: bold;
+}
+
+/* a list item inside a (un-)numbered list */
+li {
+	margin-top: 2pt;
+	margin-bottom: 8pt;
+}
+
+/* emphasize corresponds to italic, W3C recommendation */
+em {
+	color: #000099;
+	background-color: transparent;
+}
+
+/* corresponds to bold, W3C recommendation */
+strong {
+	color: #000000;
+	background-color: transparent;
+}
+
+/* italic should match EM */
+i {
+	color: #000099;
+	background-color: transparent;
+}
+
+/* bold should match STRONG */
+b {
+	color: #000000;
+	background-color: transparent;
+}
+
+/* error messages */
+.error {
+	color: #cc0000;
+	background-color: transparent;
+}
+
+/* visible comments */
+.gray {
+	color: #777777;
+	background-color: transparent;
+}
+
+/* search form at the bottom of every page */
+form.search {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	margin-top: 10pt;
+	margin-bottom: 0pt;
+	padding: 0pt;
+	border-style: none;
+	background-color: transparent;
+}
+
+/* all forms, the complete form area */
+form {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	margin-bottom: 4pt;
+	background-color: #cccccc;
+	padding: 2pt;
+	border-style: solid;
+	border-width: 1pt;
+	border-color: #000000;
+
+}
+
+/* buttons, text fields */
+input {
+	font-family: Arial ,  Helvetica ,  sans-serif;
+	font-size: medium;
+	font-weight: normal;
+	color: black;
+	background-color: white;
+}
+
+/* edit box */
+textarea {
+	font-family: Arial ,  Helvetica ,  sans-serif;
+	font-size: medium;
+	font-weight: normal;
+	color: black;
+	background-color: white;
+}
+
+/* dropdown fields (currently none) */
+select {
+	font-family: Arial ,  Helvetica ,  sans-serif;
+	font-size: medium;
+	color: black;
+	background-color: silver;
+}
+
+/* a medium link */
+a:link {
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+/* a visited link */
+a:visited {
+	background-color: transparent;
+	text-decoration: underline;
+
+}
+
+/* mouse over a link */
+a:hover {
+	color: black;
+	background-color:#edf5f8;
+	text-decoration: underline;
+	font-weight: strong;
+}
+
+/*Navigation bar*/
+tr
+{
+	font-size: large;
+	background-color:transparent;
+}
+
+/*.color2-bg
+{
+	font-size: large;
+	background-color:#ffd300;
+}*/
+
+.header {
+	width: 100%;
+	background-color:white;
+	text-align: left;
+	padding-bottom: 0pt;
+	background-image: url(../image/decoration/decor.png);
+background-repeat: repeat-x;
+border-top-style: solid;
+	border-top-width: 0pt;
+	border-top-color: black;
+	border-bottom-style: solid;
+	border-bottom-width: 2pt;
+	border-bottom-color: black;
+}
+
+.infocontainer
+{
+	font-size: small;
+	color: gray;
+	background-image: url(../image/decoration/decor-corner-note.png);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-color:#ffcc66;
+	border-top-style: solid;
+	border-top-width: 1pt;
+	border-top-color: silver;
+	border-bottom-style: solid;
+	border-bottom-width: 1pt;
+	border-bottom-color: silver;
+	width: 100%;
+	height: 32pt;
+	vertical-align: middle;
+	margin: 0pt;
+	padding-left: 6pt;
+}
+
+/*Upper horizontal bar for location purposes*/
+.navigator
+{
+/*visibility: hidden;*/
+display:block;
+	font-size: small;
+	background-color: white;
+	text-color: gray;
+	border-style: solid;
+	border-width: 0pt;
+	border-color: gray;
+	padding-left: 30pt;
+	width: 100%;
+	height: 26pt;
+	vertical-align: middle;
+	background-image: url("../image/decoration/compass.png");
+	background-position: center left;
+	background-repeat: no-repeat;
+}
+
+
+.header{
+	
+}
+
+#footerblock{
+	background-color: #4a9592;
+	vertical-align: top;
+	background-image: url(../image/decoration/decor-footer.png);
+	background-repeat: repeat-x;
+	font-size: small;
+}
+
+.cell-logo{
+	text-align: center;
+	width: 20%;
+}
+
+.company{
+text-align: center;
+background-color: transparent;
+width: 20%;
+}
+
+.campuslogo{
+width: 30%;
+background-color: transparent;
+background-image: url(../image/decoration/decor.png);
+background-repeat: repeat-x;
+}
+
+.sitename{
+width: 20%;
+background-color: transparent;
+text-align: right;
+text-align: center;
+}
+
+.institution{
+width: 30%;
+background-color: green;
+}
+
+.simple {
+	background-color: #edf5f8;
+	padding: 0pt;
+	margin: 0pt;
+	border-style: solid;
+	border-width: 8pt;
+	border-color: #1e9cd6;
+}
+
+/*Miguel toolbar, where we can find modules*/
+.rollover {
+/*width: 62pt;*/
+text-align: center;
+padding-left: 4pt;
+padding-right:4pt;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 10pt;
+background-color: #1e9cd6;
+border-style: solid;
+border-width: 0pt;
+border-color: #1e9cd6;
+}
+
+/*.toolbarcontent {
+background-color: white;
+text-align: center;
+padding: 40pt;
+margin: 40pt;
+}*/
+
+.toolmain{
+/*background-color: #90b2b1;*/
+/*padding-top: 5pt;*/
+/*margin-top: 5pt;*/
+width: 100%;
+padding-top: 10pt;
+
+}
+
+
+.rollover a{
+display:block;
+height: 60px;
+width: 60px;
+
+background-image: url(../image/decoration/decor-buttom52.png);
+background-repeat: no-repeat;
+padding: 0pt;
+margin: 2pt;
+padding-top: 0pt;
+background-color: #1e9cd6;
+}
+
+.rollover img{
+margin-top: 7px;
+}
+
+
+.rollover a:hover{
+background-color: transparent;
+background-image: url(../image/decoration/decor-buttom-hover52.png);
+background-repeat: no-repeat;
+}
+
+.rollover a:actual{
+background-color: transparent;
+
+}
+
+/*Upper box with help information*/
+.helpbox{
+	font-size: small;
+	color: gray;
+	background-color:#ffcc66;
+	border-top-style: solid;
+	border-top-width: 1pt;
+	border-top-color: silver;
+	border-bottom-style: solid;
+	border-bottom-width: 1pt;
+	border-bottom-color: silver;
+	width: 100%;
+	height: 32pt;
+	vertical-align: middle;
+	text-align: right;
+	horizontal-align: center;
+	margin: 0pt;
+}
+
+.colorLogin-bg{
+	background-color:silver;
+}
+
+
+
+
+/*modules style and behaviour*/
+
+.moduletitle {
+display: block;
+background-color: white;
+vertical-align: middle;
+horizontal-align: center;
+font-size: large;
+padding-right: 20pt
+}
+
+/*.moduletitle img{
+padding-right: 20pt;
+}*/
+
+.modulename {
+font-size: large;
+}
+
+img {
+vertical-align: middle;
+}
+
+
+/* eof */
+
+
+
+
