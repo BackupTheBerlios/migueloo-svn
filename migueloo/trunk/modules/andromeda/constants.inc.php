@@ -27,21 +27,21 @@
       +----------------------------------------------------------------------+
 */
 /**
- * Errores para errorHandler
+ * Errors for errorHandler
  */
 define ('FATAL', E_USER_ERROR);
 define ('ERROR', E_USER_WARNING);
 define ('WARNING', E_USER_NOTICE);
 
 /**
- * Clase de Error
+ * Class of Error
  */
-define("USER_ERROR", 1);
-define("BASE_ERROR", 2);
-define("APP_ERROR", 3);
+define('USER_ERROR', 1);
+define('BASE_ERROR', 2);
+define('APP_ERROR', 3);
 
 /**
- * Severidad del Error
+ * Error severity
  */
 define('LOG_EMERG',    0);     /** System is unusable */
 define('LOG_ALERT',    1);     /** Immediate action required */
@@ -53,17 +53,17 @@ define('LOG_INFO',     6);     /** Informational */
 define('LOG_DEBUG',    7);     /** Debug-level messages */
 
 /**
- * Tipo de Error
+ * Type of Error
  */
-define("UNKNOWN", 0);
-define("COULD_NOT_OPEN_FILE", 1);
-define("COULD_NOT_CREATE_FILE", 2);
-define("FILE_DOES_NOT_EXIST", 3);
-//define("", "");
-//define("", "");
+define('UNKNOWN', 0);
+define('COULD_NOT_OPEN_FILE', 1);
+define('COULD_NOT_CREATE_FILE', 2);
+define('FILE_DOES_NOT_EXIST', 3);
+//define('', '');
+//define('', '');
 
 
-//define("", "");
+//define('', '');
 
 
 

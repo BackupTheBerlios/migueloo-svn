@@ -64,11 +64,11 @@ class LogHandler
 					$logger = &Log::singleton('file', MIGUELBASE_LOG_FILE, 'miguelOO_'.$ident, $conf);
               		break;
       	      	case 'adodb':
-           	 		$db_conf = array('ddbbSgbd' =>Session::getContextValue("ddbbSgbd"),
-        	    					 'ddbbServer' => Session::getContextValue("ddbbServer"),
-						    		 'ddbbUser' => Session::getContextValue("ddbbUser"),
-						    		 'ddbbPassword' => Session::getContextValue("ddbbPassword"),
-						    		 'ddbbMainDb' => Session::getContextValue("ddbbMainDb"));
+           	 		$db_conf = array('ddbbSgbd' =>Session::getContextValue('ddbbSgbd'),
+        	    					 'ddbbServer' => Session::getContextValue('ddbbServer'),
+						    		 'ddbbUser' => Session::getContextValue('ddbbUser'),
+						    		 'ddbbPassword' => Session::getContextValue('ddbbPassword'),
+						    		 'ddbbMainDb' => Session::getContextValue('ddbbMainDb'));
         	    	$conf = array('dsn' => $db_conf);
 					$logger = &Log::singleton('adodb', MIGUELBASE_LOG_TABLE, 'miguelOO_'.$ident, $conf);
         	    	break;

@@ -3,7 +3,7 @@
     +----------------------------------------------------------------------+
     | Miguel Temp Dir Manager class                                        |
     +----------------------------------------------------------------------+
-    | This software is part of Miguel    version 0.1.0 $Revision: 1.3 $    |
+    | This software is part of Miguel    version 0.1.0 $Revision: 1.4 $    |
     +----------------------------------------------------------------------+
     | Copyright (c) 2003, Asociacion Hispalinux                            |
     +----------------------------------------------------------------------+
@@ -43,19 +43,19 @@
 
   	02/09/2003 00:40 - Initial release
 */
-include_once (Util::app_Path("common/control/classes/miguel_Error.class.php"));
+include_once (Util::app_Path('common/control/classes/miguel_Error.class.php'));
 
 class miguel_DirTemp extends miguel_Error
 {
-	var $name = "";
-	var $dirBase = "";
+	var $name = '';
+	var $dirBase = '';
 
-	function miguel_DirTemp ( $strDirBase = "")
+	function miguel_DirTemp ( $strDirBase = '')
 	{
 		//Set a prime seed for random nums
 		srand( (double)microtime()*7919 );
 
-		$this->name = "";
+		$this->name = '';
 		$this->dirBase = $strDirBase;
 
 		//Call to superclass constructor
@@ -74,7 +74,7 @@ class miguel_DirTemp extends miguel_Error
 
 	function getDirTemp()
 	{
-		return ( $this->dirBase . "/" . $this->name );
+		return ( $this->dirBase . '/' . $this->name );
 	}
 
 	function generateRandomName($length = 8)
@@ -97,10 +97,10 @@ class miguel_DirTemp extends miguel_Error
 		@mkdir( $this->getDirTemp(), 0777 );
 	}
 
-	function deleteName($dirPath="")
+	function deleteName($dirPath='')
 	{
-		if ( $dirPath == "" ) {
-			$dirPath = $this->dirBase . "/" . $this->name;
+		if ( $dirPath == '' ) {
+			$dirPath = $this->dirBase . '/' . $this->name;
 		}
                 /* Try to remove the directory. If it can not manage to remove it,
                 * it's probable the directory contains some files or other directories,
@@ -110,8 +110,8 @@ class miguel_DirTemp extends miguel_Error
                   @chdir($dirPath);
                   $handle = @opendir($dirPath) ;
                   while ($element = @readdir($handle) ) {
-		      $elementPath = $dirPath . "/" . $element;
-                      if ( $element == "." || $element == "..") {
+		      $elementPath = $dirPath . '/' . $element;
+                      if ( $element == '.' || $element == '..') {
                          continue;       // skip current and parent directories
                       } elseif ( @is_file($elementPath) ) {
                          @unlink($elementPath);
@@ -135,7 +135,7 @@ class miguel_DirTemp extends miguel_Error
 		
 		//Read data from a file in temp folder
 		if (@is_file($file)) {
-			if (($fp = fopen($file,"rb"))) {
+			if (($fp = fopen($file,'rb'))) {
 				$file_content = fread($fp, filesize($file));
 				fclose($fp);
 			} else {
@@ -150,7 +150,7 @@ class miguel_DirTemp extends miguel_Error
 	function _writeInTempFile($filename, $data)
 	{
 		//Write data in a file in temp folder
-		if (($fp = fopen($this->getDirTemp().'/'.$filename,"wb"))) {
+		if (($fp = fopen($this->getDirTemp().'/'.$filename,'wb'))) {
 			fwrite($fp, $data);
 			fclose($fp);
 		} else {

@@ -410,7 +410,7 @@ class Registry
      */
     function listThemes()
     {
-        include_once(Util::base_Path("include/classes/theme.class.php"));
+        include_once(Util::base_Path('include/classes/theme.class.php'));
 
         return Theme::getActiveThemes();
     }

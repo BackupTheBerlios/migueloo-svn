@@ -42,7 +42,7 @@ class base_VError extends base_LayoutPage
 	/**
 	 * @access private
 	 */
-	var $gettext_domain = "error"; 
+	var $gettext_domain = 'error'; 
 
 	/**
 	 * This is the constructor.
@@ -66,34 +66,34 @@ class base_VError extends base_LayoutPage
 	{
 
 		$main = html_div();
-		$main->set_id("content");
+		$main->set_id('content');
 		
-		$title = html_h2("Se ha producido un error");
-		$title->set_tag_attribute("class", "warncolor");
+		$title = html_h2('Se ha producido un error');
+		$title->set_tag_attribute('class', 'warncolor');
 		$main->add($title);
 		
 		//Puede no estar definido el contexto
-		$width = Session::getContextValue("mainInterfaceWidth");
+		$width = Session::getContextValue('mainInterfaceWidth');
 		if(!isset($width)) {
-			$width = "100%";
+			$width = '100%';
 		} 
 		$table = html_table($width,0,1,0);
 		
 		//Puede no estar definido el error
 		$error = $this->getViewVariable('str_error');
 		if(!isset($error)) {
-			$error = "No error code was given";
+			$error = 'No error code was given';
 		} 
 		
-		$row = html_td("warncolor", "",$error);
-		$row->set_tag_attribute("align", "center");
+		$row = html_td('warncolor', '',$error);
+		$row->set_tag_attribute('align', 'center');
 		$table->add_row($row);
 		
 		//Puede no estar definido la url de retorno
 		$url = $this->getViewVariable('str_url');
 		if(isset($url)) {
-			$row = html_td("", "",html_a($url, agt('Volver')));
-			$row->set_tag_attribute("align", "center");
+			$row = html_td('', '',html_a($url, agt('Volver')));
+			$row->set_tag_attribute('align', 'center');
 			$table->add_row($row);
 		} 
 		

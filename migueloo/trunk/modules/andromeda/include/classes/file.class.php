@@ -118,17 +118,17 @@ class File
 function unlink_wc($dir, $pattern){
    if ($dh = opendir($dir)) {
        while (false !== ($file = readdir($dh))){
-           if ($file != "." && $file != "..") {
+           if ($file != '.' && $file != '..') {
                $files[] = $file;
            }
        }
        closedir($dh);
-       if(strpos($pattern,".")) {
-           $baseexp=substr($pattern,0,strpos($pattern,"."));
-           $typeexp=substr($pattern,strpos($pattern,".")+1,strlen($pattern));
+       if(strpos($pattern,'.')) {
+           $baseexp=substr($pattern,0,strpos($pattern,'.'));
+           $typeexp=substr($pattern,strpos($pattern,'.')+1,strlen($pattern));
        }else{
            $baseexp=$pattern;
-           $typeexp="";
+           $typeexp='';
        }
        $baseexp=preg_quote($baseexp);
        $typeexp=preg_quote($typeexp);
@@ -137,12 +137,12 @@ function unlink_wc($dir, $pattern){
        $i=0;
        foreach($files as $file) {
            $filename=basename($file);
-           if(strpos($filename,".")) {
-               $base=substr($filename,0,strpos($filename,"."));
-               $type=substr($filename,strpos($filename,".")+1,strlen($filename));
+           if(strpos($filename,'.')) {
+               $base=substr($filename,0,strpos($filename,'.'));
+               $type=substr($filename,strpos($filename,'.')+1,strlen($filename));
            }else{
                $base=$filename;
-               $type="";
+               $type='';
            }
            if(preg_match("/^".$baseexp."$/i",$base) && preg_match("/^".$typeexp."$/i",$type))  {
                $matches[$i]=$file;
@@ -151,10 +151,10 @@ function unlink_wc($dir, $pattern){
        }
        if (count($matches) > 0){
                while(list($idx,$val) = each($matches)){
-                   if (substr($dir,-1) == "/"){
+                   if (substr($dir,-1) == '/'){
                        unlink($dir.$val);
                    }else{
-                       unlink($dir."/".$val);
+                       unlink($dir.'/'.$val);
                    }
                }
        }
@@ -162,7 +162,7 @@ function unlink_wc($dir, $pattern){
    }
 }
 
-unlink_wc("/path/to/folder/","*.*");
+unlink_wc('/path/to/folder/','*.*');
 */
 }
 

@@ -3,9 +3,9 @@
       +----------------------------------------------------------------------+
       | miguel error file                                                    |
       +----------------------------------------------------------------------+
-      | This software is part of miguel    version 0.1.0 $Revision: 1.3 $    |
+      | This software is part of miguel    version 0.1.0 $Revision: 1.4 $    |
       +----------------------------------------------------------------------+
-      |    $Id: base_verror.orig.php,v 1.3 2004/08/06 10:38:42 chet Exp $    |
+      |    $Id: base_verror.orig.php,v 1.4 2004/08/21 19:05:00 luisllorente Exp $    |
       +----------------------------------------------------------------------+
       |    This program is free software; you can redistribute it and/or     |
       |    modify it under the terms of the GNU General Public License       |
@@ -40,19 +40,19 @@ last change:
 
 // NOTE: This is an error page and dependences with db neither configuration file must be deleted, so like
 // in the install script, we set the vars ussually setted in the config file.
-$GLOBALS['webDir']           = realpath("../..")."/";
-$GLOBALS['urlAppend']        = str_replace ("/miguel/messages/error_message.php", "", $PHP_SELF);
-$GLOBALS['urlServer']        = "http://".$SERVER_NAME.$GLOBALS['urlAppend']."/";
+$GLOBALS['webDir']           = realpath('../..').'/';
+$GLOBALS['urlAppend']        = str_replace ('/miguel/messages/error_message.php', '', $PHP_SELF);
+$GLOBALS['urlServer']        = 'http://'.$SERVER_NAME.$GLOBALS['urlAppend'].'/';
 $GLOBALS['language']         = -1;
 $GLOBALS['config_readed']    = TRUE;
-$GLOBALS['educationManager'] = "Juan Espaol";
-$GLOBALS['siteName']         = "miguel";
-$GLOBALS['Institution']      = "Hispalinux";
-$GLOBALS['InstitutionUrl']   = "http://www.hispalinux.es/";
+$GLOBALS['educationManager'] = 'Juan Espaol';
+$GLOBALS['siteName']         = 'miguel';
+$GLOBALS['Institution']      = 'Hispalinux';
+$GLOBALS['InstitutionUrl']   = 'http://www.hispalinux.es/';
 
 // Now -as always- we set the vars needed by the header files
-//$GLOBALS['langFile']    = "index";
-$GLOBALS['headerTitle'] = "Miguel Error";
+//$GLOBALS['langFile']    = 'index';
+$GLOBALS['headerTitle'] = 'Miguel Error';
 
 @include_once ('../include/miguel_require.php');
 @include_once (miguel_webDir().'miguel/include/miguel_functions.php');
@@ -80,13 +80,13 @@ $GLOBALS['headerTitle'] = "Miguel Error";
 
 // It might have happened more than one error. If that's the case, we provide the errors separated with a comma
 
-$ErrorsArray       = $_SESSION["errors"];
-$Errors_args_Array = $_SESSION["errors_args"];
+$ErrorsArray       = $_SESSION['errors'];
+$Errors_args_Array = $_SESSION['errors_args'];
 
 // 1:
 if (!is_array($ErrorsArray))
 {
-         $GLOBALS['miguel_Error']->_addError("no error code was given");
+         $GLOBALS['miguel_Error']->_addError('no error code was given');
 // 2:
 }
 else
@@ -113,7 +113,7 @@ else
   * include the page header, the title of the page will be "miguel"
   */
 
-//miguelIncludeHeader("miguel");
+//miguelIncludeHeader('miguel');
 @include_once (miguel_webDir().'miguel/include/miguel_topheader.php');
 
 ?>

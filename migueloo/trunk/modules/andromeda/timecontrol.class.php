@@ -38,7 +38,7 @@ class timeControl
 	
     function getInterval()
 	{ 
-		$micro_time = explode(" ", microtime()); 
+		$micro_time = explode(' ', microtime()); 
 		$this->arr_time[] = $micro_time[1] + $micro_time[0]; 
     } 
 
@@ -49,7 +49,7 @@ class timeControl
 		
 		for($i=1; $i < $int_total; $i++){
 			$int_time = $this->arr_time[$i] - $this->arr_time[$i - 1];
-			$ret_val[] = "Intervalo ".$i." en ".substr($int_time,0,5)." segundos.\n";
+			$ret_val[] = 'Intervalo '.$i.' en '.substr($int_time,0,5)." segundos.\n";
 		}
 		
 		$total_time = ($this->arr_time[$int_total - 1] - $this->arr_time[0]);

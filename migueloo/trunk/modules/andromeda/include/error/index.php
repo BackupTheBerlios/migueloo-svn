@@ -26,8 +26,8 @@
       +----------------------------------------------------------------------+
 */
 //Sólo para desarrollo
-include_once ("../../../common/miguel_base.inc.php");
-include_once (Util::app_Path("base/include/error/control/classes/base_cerror.class.php"));
+include_once ('../../../common/miguel_base.inc.php');
+include_once (Util::app_Path('base/include/error/control/classes/base_cerror.class.php'));
 
 $miguel = new base_CError('Literal de ejemplo');
 $miguel->Exec();

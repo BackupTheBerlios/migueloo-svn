@@ -102,11 +102,11 @@ if (!defined('MIGUELBASE_PHP_INT_VERSION')) {
     }
 }
 
-define("MIGUEL_GETTEXT_DEBUG", 0);
+define('MIGUEL_GETTEXT_DEBUG', 0);
 
 /**
- * Encapsula el uso de gettext. Si no existe la traducción, presenta un valor por defecto
- * @param string $char Cadena a traducir
+ * Encapsulates gettext use. If there isn't translation, shows a default value
+ * @param string $char String to translate
  */
 function agt($char)
 {

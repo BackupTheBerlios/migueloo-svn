@@ -54,7 +54,7 @@ class ErrorHandler
 	{
 		error_reporting(E_ALL);
 		//error_reporting  (FATAL + ERROR + WARNING);
-		set_error_handler(array($this, "processError"));
+		set_error_handler(array($this, 'processError'));
 	}
 
 	// funcion de gestion de errores definida por el usuario
@@ -65,7 +65,7 @@ class ErrorHandler
 
 		if (in_array($num_err, $errores_de_usuario)){
 		    // marca de fecha/hora para el registro de error
-    		$dt = date("Y-m-d H:i:s (T)");
+    		$dt = date('Y-m-d H:i:s (T)');
 
     		// definir una matriz asociativa de cadenas de error
     		// en realidad las unicas entradas que deberiamos
@@ -73,19 +73,19 @@ class ErrorHandler
     		// E_USER_WARNING y E_USER_NOTICE
 
     		$tipo_error = array (
-				E_ERROR          => "Error",
-				E_WARNING        => "Advertencia",
-				E_PARSE          => "Error de Intérprete",
-				E_NOTICE          => "Anotación",
-				E_CORE_ERROR      => "Error de Núcleo",
-				E_CORE_WARNING    => "Advertencia de Núcleo",
-				E_COMPILE_ERROR  => "Error de Compilación",
-				E_COMPILE_WARNING => "Advertencia de Compilacón",
-				E_USER_ERROR      => "Error de Usuario",
-				E_USER_WARNING    => "Advertencia de Usuario",
-				E_USER_NOTICE    => "Anotación de Usuario"
+				E_ERROR          => 'Error',
+				E_WARNING        => 'Advertencia',
+				E_PARSE          => 'Error de Intérprete',
+				E_NOTICE          => 'Anotación',
+				E_CORE_ERROR      => 'Error de Núcleo',
+				E_CORE_WARNING    => 'Advertencia de Núcleo',
+				E_COMPILE_ERROR  => 'Error de Compilación',
+				E_COMPILE_WARNING => 'Advertencia de Compilacón',
+				E_USER_ERROR      => 'Error de Usuario',
+				E_USER_WARNING    => 'Advertencia de Usuario',
+				E_USER_NOTICE    => 'Anotación de Usuario'
 				//,
-				//E_STRICT          => "Anotaci&oacute;n de tiempo de ejecuci&oacute;n"
+				//E_STRICT          => 'Anotaci&oacute;n de tiempo de ejecuci&oacute;n'
     		);
 
 	      	$err = "<errorentry>\n";

@@ -96,7 +96,7 @@ class Theme
      	$theme = Session::getValue('userinfo_theme');
 		
 		if(!Theme::existTheme($theme)){
-     		$theme = Session::getContextValue("theme");
+     		$theme = Session::getContextValue('theme');
      	} 
 		
      	return Theme::_getPATHTheme($theme);;
@@ -112,7 +112,7 @@ class Theme
 		$theme = Session::getValue('userinfo_theme');
 
      	if(!Theme::existTheme($theme)){
-     		$theme = Session::getContextValue("theme");
+     		$theme = Session::getContextValue('theme');
      	}
 		
      	return Theme::_getURLTheme($theme);
@@ -198,7 +198,7 @@ class Theme
 //          * @param $uid this is the user_id of the user we'd like to now it's prefered theme
 //          */
 //        function getThemeUser($_uid){
-//                $getTheme = mysql_query("SELECT theme FROM " . $GLOBALS['mysqlMainDb'] . ".user WHERE user_id='$_uid'");
+//                $getTheme = mysql_query('SELECT theme FROM ' . $GLOBALS['mysqlMainDb'] . ".user WHERE user_id='$_uid'");
 //                while ($mythemeuser = mysql_fetch_array($getTheme)){
 //                        $ThemeUser=$mythemeuser[0];
 //                }

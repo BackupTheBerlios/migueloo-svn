@@ -65,10 +65,10 @@ class NLS
         include_once(Util::base_Path('include/classes/nls.inc.php'));
         //Debug::oneVar($lang, __FILE__, __LINE__);
         if(empty($lang) || !NLS::isValid($lang)) {
-        	if(Session::getValue("lang") != null) {
-				$lang = Session::getValue("lang");
-			} else if(Session::getContextValue("gettext_lang") != null) {
-				$lang = Session::getContextValue("gettext_lang");
+        	if(Session::getValue('lang') != null) {
+				$lang = Session::getValue('lang');
+			} else if(Session::getContextValue('gettext_lang') != null) {
+				$lang = Session::getContextValue('gettext_lang');
 			} else {
 				$lang = 'es_ES';
 			}
@@ -188,10 +188,10 @@ class NLS
 	function localiseDateTime($format, $datetime)
 	{
 		//$datetime tiene el formato aaaa-mm-dd HH:MM:SS
-		list($date, $time) = explode(" ", $datetime, 2);
+		list($date, $time) = explode(' ', $datetime, 2);
 		
-		list($year, $month, $day) = explode("-", $date, 3);
-		list($hour, $minute, $second) = explode(":", $time, 3);
+		list($year, $month, $day) = explode('-', $date, 3);
+		list($hour, $minute, $second) = explode(':', $time, 3);
 		
 		return strftime($format, mktime($hour, $minute, $second, $day, $month,$year));
 	} 

@@ -72,11 +72,11 @@ class base_CError extends base_Controller
      
 	function processPetition() 
 	{
-		//$this->addNavElement(Util::format_URLPath($this->url), "Volver");
-		//$this->addNavElement(Util::format_URLPath("base/include/error/index.php"), "Error");
-		$this->setPageTitle("miguel Error Page");
-		$this->setMessage("Detectado un error.");
-		$this->setHelp("");
+		//$this->addNavElement(Util::format_URLPath($this->url), 'Volver');
+		//$this->addNavElement(Util::format_URLPath('base/include/error/index.php'), 'Error');
+		$this->setPageTitle('miguel Error Page');
+		$this->setMessage('Detectado un error.');
+		$this->setHelp('');
 		
 		$this->setViewVariable('str_error', $this->str_error);
 		$this->setViewVariable('str_url', $this->url);

@@ -69,37 +69,37 @@ class Session
     function Session() 
     {	
         //Parametros de tratamiento de errores
-        ini_set("display_errors", "On");
-        //ini_set("display_startup_errors", "Off");
-        ini_set("log_errors", "Off");
+        ini_set('display_errors', 'On');
+        //ini_set('display_startup_errors', 'Off');
+        ini_set('log_errors', 'Off');
 
 		include_once(Util::base_Path('include/classes/errorhandler.class.php'));
 		$error_handler = new errorHandler();
 
 		$str_name = session_name();
 
-		if ($str_name != "MIGUEL_BASE") {
-			session_name("MIGUEL_BASE");
+		if ($str_name != 'MIGUEL_BASE') {
+			session_name('MIGUEL_BASE');
 		}
 
 		//Parametros de sesion
-		ini_set("session.save_handler", "files");
-		ini_set("session.use_cookies", 0);
+		ini_set('session.save_handler', 'files');
+		ini_set('session.use_cookies', 0);
 
 		if(MIGUELBASE_SESSION_DIR != ''){
-        	ini_set("session.save_path", MIGUELBASE_SESSION_DIR);
+        	ini_set('session.save_path', MIGUELBASE_SESSION_DIR);
         }
 		if (MIGUELBASE_PHP_INT_VERSION >= 40200) {
 			session_cache_expire(MIGUELBASE_SESSION_TIME);
 		}
 
-        ini_set("session.use_trans_sid", 0);
-        ini_set("session.gc_probability", 100);
+        ini_set('session.use_trans_sid', 0);
+        ini_set('session.gc_probability', 100);
 
         //Parametros para transferencia de ficheros
-		ini_set("file_uploads", "On");
-		ini_set("upload_tmp_dir", MIGUELBASE_CACHE_DIR);
-        ini_set("upload_max_filesize", "2M");
+		ini_set('file_uploads', 'On');
+		ini_set('upload_tmp_dir', MIGUELBASE_CACHE_DIR);
+        ini_set('upload_max_filesize', '2M');
 
 		if(!session_id()){
             session_start();
@@ -140,16 +140,16 @@ class Session
     function clear()
     {
         if (MIGUELBASE_PHP_INT_VERSION >= 40006) {
-   			if(isset($_SESSION["CONTEXT"])){
-   				$arr_context = $_SESSION["CONTEXT"];
+   			if(isset($_SESSION['CONTEXT'])){
+   				$arr_context = $_SESSION['CONTEXT'];
    				$_SESSION = array();
-   				$_SESSION["CONTEXT"] = $arr_context;
+   				$_SESSION['CONTEXT'] = $arr_context;
    			}
     	} else {
-    		if(isset($HTTP_SESSION_VARS["CONTEXT"])){
-   				$arr_context = $HTTP_SESSION_VARS["CONTEXT"];
+    		if(isset($HTTP_SESSION_VARS['CONTEXT'])){
+   				$arr_context = $HTTP_SESSION_VARS['CONTEXT'];
    				$HTTP_SESSION_VARS = array();
-   				$HTTP_SESSION_VARS["CONTEXT"] = $arr_context;
+   				$HTTP_SESSION_VARS['CONTEXT'] = $arr_context;
    			}
     	}
     }
@@ -163,12 +163,12 @@ class Session
     {
     	$ret_val = null;
     	if (MIGUELBASE_PHP_INT_VERSION >= 40006) {
-   			if(isset($_SESSION["MIGUEL_".strtoupper($str_var)])){
-   				$ret_val = $_SESSION["MIGUEL_".strtoupper($str_var)];
+   			if(isset($_SESSION['MIGUEL_'.strtoupper($str_var)])){
+   				$ret_val = $_SESSION['MIGUEL_'.strtoupper($str_var)];
    			}
     	} else {
-    		if(isset($HTTP_SESSION_VARS["MIGUEL_".strtoupper($str_var)])){
-   				$ret_val = $HTTP_SESSION_VARS["MIGUEL_".strtoupper($str_var)];
+    		if(isset($HTTP_SESSION_VARS['MIGUEL_'.strtoupper($str_var)])){
+   				$ret_val = $HTTP_SESSION_VARS['MIGUEL_'.strtoupper($str_var)];
    			}
     	}
     	return $ret_val;
@@ -182,9 +182,9 @@ class Session
     function setValue($str_var, $mix_value = '')
     {
     	if (MIGUELBASE_PHP_INT_VERSION >= 40006) {
-			$_SESSION["MIGUEL_".strtoupper($str_var)] = $mix_value;
+			$_SESSION['MIGUEL_'.strtoupper($str_var)] = $mix_value;
     	} else {
-   			$HTTP_SESSION_VARS["MIGUEL_".strtoupper($str_var)] = $mix_value;
+   			$HTTP_SESSION_VARS['MIGUEL_'.strtoupper($str_var)] = $mix_value;
     	}
     }
 
@@ -197,11 +197,11 @@ class Session
     {
         $ret_val = false;
 		if (MIGUELBASE_PHP_INT_VERSION >= 40006) {
-			if(isset($_SESSION["MIGUEL_".strtoupper($str_var)])){
+			if(isset($_SESSION['MIGUEL_'.strtoupper($str_var)])){
 				$ret_val = true;
 			}
     	} else {
-			if(isset($HTTP_SESSION_VARS["MIGUEL_".strtoupper($str_var)])){
+			if(isset($HTTP_SESSION_VARS['MIGUEL_'.strtoupper($str_var)])){
 				$ret_val = true;
 			}
     	}
@@ -216,11 +216,11 @@ class Session
     function unsetValue($str_var)
     {
 		if (MIGUELBASE_PHP_INT_VERSION >= 40006) {
-			//$_SESSION["MIGUEL_".strtoupper($str_var)] = null;
-			unset($_SESSION["MIGUEL_".strtoupper($str_var)]);
+			//$_SESSION['MIGUEL_'.strtoupper($str_var)] = null;
+			unset($_SESSION['MIGUEL_'.strtoupper($str_var)]);
 		} else {
-			//$HTTP_SESSION_VARS["MIGUEL_".strtoupper($str_var)] = null;
-			unset( $HTTP_SESSION_VARS["MIGUEL_".strtoupper($str_var)]);
+			//$HTTP_SESSION_VARS['MIGUEL_'.strtoupper($str_var)] = null;
+			unset( $HTTP_SESSION_VARS['MIGUEL_'.strtoupper($str_var)]);
 		}
     }
     
@@ -234,12 +234,12 @@ class Session
 	{
 		$ret_val = null;
         if (MIGUELBASE_PHP_INT_VERSION >= 40006) {
-   			if(isset($_SESSION["CONTEXT"]["MIGUEL_".strtoupper($str_var)])){
-   				$ret_val = $_SESSION["CONTEXT"]["MIGUEL_".strtoupper($str_var)];
+   			if(isset($_SESSION['CONTEXT']['MIGUEL_'.strtoupper($str_var)])){
+   				$ret_val = $_SESSION['CONTEXT']['MIGUEL_'.strtoupper($str_var)];
    			}
     	} else {
-    		if(isset($HTTP_SESSION_VARS["CONTEXT"]["MIGUEL_".strtoupper($str_var)])){
-   				$ret_val = $HTTP_SESSION_VARS["CONTEXT"]["MIGUEL_".strtoupper($str_var)];
+    		if(isset($HTTP_SESSION_VARS['CONTEXT']['MIGUEL_'.strtoupper($str_var)])){
+   				$ret_val = $HTTP_SESSION_VARS['CONTEXT']['MIGUEL_'.strtoupper($str_var)];
    			}
     	}
     	return $ret_val;
@@ -286,7 +286,7 @@ class Session
 		if($conf_file != ''){
 		  $this->_processXMLInitData($conf_file);
 		} else {
-				$this->_setError("miguel_Controller:: miguel no está configurado");
+				$this->_setError('miguel_Controller:: miguel no está configurado');
 		}
 	}
 
@@ -313,7 +313,7 @@ class Session
 		$xml_elements 	=& $xml_root->getAllChildren();
 
 		for ($i=0; $i < $xml_root->numChildren(); $i++) {
-			$_SESSION["CONTEXT"]["MIGUEL_".strtoupper($xml_elements[$i]->name())] = $xml_elements[$i]->getValue();
+			$_SESSION['CONTEXT']['MIGUEL_'.strtoupper($xml_elements[$i]->name())] = $xml_elements[$i]->getValue();
 		}
 
 		//Cerramos el fichero

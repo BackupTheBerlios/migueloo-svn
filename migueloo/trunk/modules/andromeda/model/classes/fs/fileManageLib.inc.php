@@ -2,11 +2,11 @@
 
 /* vim: set expandtab tabstop=4 shiftwidth=4:
   +----------------------------------------------------------------------+
-  | CLAROLINE version 1.3.1 $Revision: 1.3 $                             |
+  | CLAROLINE version 1.3.1 $Revision: 1.4 $                             |
   +----------------------------------------------------------------------+
   | Copyright (c) 2000, 2001 Universite catholique de Louvain (UCL)      |
   +----------------------------------------------------------------------+
-  | $Id: fileManageLib.inc.php,v 1.3 2004/08/06 10:23:09 chet Exp $  |
+  | $Id: fileManageLib.inc.php,v 1.4 2004/08/21 19:05:02 luisllorente Exp $  |
   +----------------------------------------------------------------------+
   | This source file is subject to the GENERAL PUBLIC LICENSE,           |
   | available through the world-wide-web at                              |
@@ -35,19 +35,19 @@
  */
  // Antonio F. Cano <antoniofcano@telefonica.net>
  // Se pasa la tabla de trabajo como parametro
-function update_db_info($dbTable, $action, $oldPath, $newPath="")
+function update_db_info($dbTable, $action, $oldPath, $newPath='')
 {
 	/*** DELETE ***/
-	if ($action == "delete")
+	if ($action == 'delete')
 	{
-		$query = "DELETE FROM " . $dbTable . "
+		$query = 'DELETE FROM ' . $dbTable . "
 		WHERE path LIKE \"".$oldPath."%\"";
 	}
 
 	/*** UPDATE ***/
-	if ($action == "update")
+	if ($action == 'update')
 	{
-		$query = "UPDATE " . $dbTable . "
+		$query = 'UPDATE ' . $dbTable . "
 		SET path = CONCAT(\"".$newPath."\", SUBSTRING(path, LENGTH(\"".$oldPath."\")+1) )
 		WHERE path LIKE \"".$oldPath."%\"";
 	}
@@ -142,7 +142,7 @@ function removeDir($dirPath)
 
 		while ($element = readdir($handle) )
 		{
-			if ( $element == "." || $element == "..")
+			if ( $element == '.' || $element == '..')
 			{
 				continue;	// skip current and parent directories
 			}
@@ -152,7 +152,7 @@ function removeDir($dirPath)
 			}
 			elseif ( is_dir ($element) )
 			{
-				$dirToRemove[] = $dirPath."/".$element;
+				$dirToRemove[] = $dirPath.'/'.$element;
 			}
 		}
 
@@ -186,7 +186,7 @@ function my_rename($filePath, $newFileName)
 	$path = $baseWorkDir.dirname($filePath);
 	$oldFileName = basename($filePath);
 
-	if (check_name_exist($path."/".$newFileName)
+	if (check_name_exist($path.'/'.$newFileName)
 		&& $newFileName != $oldFileName)
 	{
 		return false;
@@ -197,7 +197,7 @@ function my_rename($filePath, $newFileName)
 		if ((!ereg("[[:print:]]+\.[[:alnum:]]+$", $newFileName))
 			&& ereg("[[:print:]]+\.([[:alnum:]]+)$", $olFileName, $extension))
 		{
-			$newFileName .= ".".$extension[1];
+			$newFileName .= '.'.$extension[1];
 		}
 		
 		/*** Prevent file name with php extension ***/
@@ -236,7 +236,7 @@ function move($source, $target)
 	if ( check_name_exist($source) )
 	{
 		$fileName = basename($source);
-		if ( check_name_exist($target."/".$fileName) )
+		if ( check_name_exist($target.'/'.$fileName) )
 		{
 			return false;
 		}
@@ -244,7 +244,7 @@ function move($source, $target)
 		{	/*** File case ***/
 			if ( is_file($source) )
 			{
-				copy($source , $target."/".$fileName);
+				copy($source , $target.'/'.$fileName);
 				unlink($source);
 				return true;
 			}
@@ -252,7 +252,7 @@ function move($source, $target)
 			elseif (is_dir($source))
 			{
 				// check to not copy the directory inside itself
-				if (ereg("^".$source."*", $target))
+				if (ereg('^'.$source.'*', $target))
 				{
 					return false;
 				}
@@ -287,26 +287,26 @@ function copyDirTo($origDirPath, $destination)
 {
 	// extract directory name - create it at destination - update destination trail
 	$dirName = basename($origDirPath);
-	mkdir ($destination."/".$dirName, 0775);
-	$destinationTrail = $destination."/".$dirName;
+	mkdir ($destination.'/'.$dirName, 0775);
+	$destinationTrail = $destination.'/'.$dirName;
 
 	chdir ($origDirPath) ;
 	$handle = opendir($origDirPath);
 
 	while ($element = readdir($handle) )
 	{
-		if ( $element == "." || $element == "..")
+		if ( $element == '.' || $element == '..')
 		{
 			continue; // skip the current and parent directories
 		}
 		elseif ( is_file($element) )
 		{
-			copy($element, $destinationTrail."/".$element);
+			copy($element, $destinationTrail.'/'.$element);
 			unlink($element) ;
 		}
 		elseif ( is_dir($element) )
 		{
-			$dirToCopy[] = $origDirPath."/".$element;
+			$dirToCopy[] = $origDirPath.'/'.$element;
 		}
 	}
 
@@ -350,8 +350,8 @@ function index_dir($path)
 	// reads directory content end record subdirectoies names in $dir_array
 	while ($element = readdir($handle) )
 	{
-		if ( $element == "." || $element == "..") continue;	// skip the current and parent directories
-		if ( is_dir($element) )	 $dirArray[] = $path."/".$element;
+		if ( $element == '.' || $element == '..') continue;	// skip the current and parent directories
+		if ( is_dir($element) )	 $dirArray[] = $path.'/'.$element;
 	}
 
 	closedir($handle) ;
@@ -367,7 +367,7 @@ function index_dir($path)
 		}
 	}
 
-	chdir("..") ;
+	chdir('..') ;
 
 	return $dirArray ;
 
@@ -410,9 +410,9 @@ function index_and_sort_dir($path)
 function form_dir_list($sourceType, $sourceComponent, $command, $baseWorkDir, $language)
 {
     //Aadido por Fernando Acero Martin
-    include_once("../lang/english/trad4all.inc.php");
+    include_once('../lang/english/trad4all.inc.php');
     include_once("../lang/$language/trad4all.inc.php");
-    include_once("../lang/english/document.inc.php");
+    include_once('../lang/english/document.inc.php');
     include_once("../lang/$language/document.inc.php");
     //Fin del aadido
 
@@ -438,11 +438,11 @@ function form_dir_list($sourceType, $sourceComponent, $command, $baseWorkDir, $l
 
 			/* compute de the display tab */
 
-			$tab = "";					// $tab reinitialisation
-			$depth = substr_count($pathValue, "/");		// The number of nombre '/' indicates the directory deepness
+			$tab = '';					// $tab reinitialisation
+			$depth = substr_count($pathValue, '/');		// The number of nombre '/' indicates the directory deepness
 			for ($h=0; $h<$depth; $h++)
 			{
-				$tab .= "&nbsp;&nbsp";
+				$tab .= '&nbsp;&nbsp';
 			}
 			$dialogBox .= "<option value=\"$pathValue\">$tab>$dirname\n";
 		}
@@ -462,7 +462,7 @@ function form_dir_list($sourceType, $sourceComponent, $command, $baseWorkDir, $l
  * @author - Antonio F. Cano <antoniofcano AT telefonica DOT net >
  * @param  - path (string) - directory path of the one to index
  */
-function form_upload($webDir, $pathServer, $language, $submitGroupWorkUrl="", $extended=true, $zip=false)
+function form_upload($webDir, $pathServer, $language, $submitGroupWorkUrl='', $extended=true, $zip=false)
 {
     //Aadido por Fernando Acero Martin
     include("$webDir/miguel/lang/spanish/trad4all.inc.php");
@@ -495,10 +495,10 @@ function form_upload($webDir, $pathServer, $language, $submitGroupWorkUrl="", $e
 	if ( $extended ) {
 		//Indetec: Utilizamos el formulario de Document.php, ajustando las variables.
 		if ( !isset($titreFile) ) {
-			$titreFile ="";
+			$titreFile ='';
 		}
 		if ( !isset($commentFile) ) {
-			$commentFile ="";
+			$commentFile ='';
 		}
 
 		echo	"
@@ -602,18 +602,18 @@ function fileManageDisplayDir(&$fileManage, $is_adminOfCourse, $language, $webDi
 		$dirPath = $fileManage->dirList[$i]['file'];
 		$dirId = $fileManage->dirList[$i]['id'];
 		$dspDirName = htmlentities( $dirName );
-		$cmdDirName = rawurlencode($fileManage->getDir() . $curDirpath . "/" . $dirPath);
+		$cmdDirName = rawurlencode($fileManage->getDir() . $curDirpath . '/' . $dirPath);
 		$dirComment = $fileManage->dirList[$i]['comment'];
 		$dirVisibility = $fileManage->dirList[$i]['visibility'];
 
-		if ( $dirVisibility == "i" ) {
+		if ( $dirVisibility == 'i' ) {
 			$style=" class=\"invisible\"";
 			if ( !$is_adminOfCourse ) {
 				continue;
 			}
 		}
 		else {
-			$style="";
+			$style='';
 		}
 
 		echo "<tr align=\"center\">\n";
@@ -680,12 +680,12 @@ function fileManageDisplayFile(&$fileManage, $uid, $is_adminOfCourse, $lock, $la
 		$image       = choose_image( $fileManage->fileList[$i]['titre'] );
 		$size        = format_file_size( $fileManage->fileList[$i]['size'] );
 		$date        = format_date( $fileManage->fileList[$i]['date'] );
-		$pathFileName = format_url( $GLOBALS[currentCourseID] . "/" . $fileManage->modName . $fileManage->fileList[$i]['path'] );
+		$pathFileName = format_url( $GLOBALS[currentCourseID] . '/' . $fileManage->modName . $fileManage->fileList[$i]['path'] );
 		$dspFileName = htmlentities( $fileManage->fileList[$i]['titre'] );
 		$commentFile = $fileManage->fileList[$i]['comment'];
 		$visibilityStatus = $fileManage->fileList[$i]['visibility'];
 
-		if ( $fileManage->modName != "document" ) {
+		if ( $fileManage->modName != 'document' ) {
 			$lockStatus = $fileManage->fileList[$i]['lock'];
 			$UIDFile = $fileManage->fileList[$i]['uid'];
 			$GIDFile = $fileManage->fileList[$i]['gid'];
@@ -694,7 +694,7 @@ function fileManageDisplayFile(&$fileManage, $uid, $is_adminOfCourse, $lock, $la
 		}
 
 		//Indetec: Elige el estilo de la tupla en función d la visibilidad y el bloqueo.
-		if ($visibilityStatus == "i") {
+		if ($visibilityStatus == 'i') {
 			$style=" class=\"invisible\"";
 			//Si no somos administradores o dueños y es una tupla invisible pasamos a la siguiente
 			if ( (!$is_adminOfCourse) && ($uid != $UIDFile) && ($GIDFile != $fileManage->gid) ) {
@@ -763,7 +763,7 @@ function fileManageDisplayFile(&$fileManage, $uid, $is_adminOfCourse, $lock, $la
         }
 		echo "</tr>\n";
 		/*** comments ***/
-		if ( $commentFile != "" ) {
+		if ( $commentFile != '' ) {
 			$commentFile = htmlentities($commentFile);
 			$commentFile = nl2br($commentFile);
 

@@ -205,28 +205,28 @@ $nls['emails']['ja_JP'] = 'ISO-2022-JP';
  ** Available charsets for outgoing email traffic.
  **/
 
-$nls['encodings']['windows-1256'] = _("Arabic (Windows-1256)");
-$nls['encodings']['ARMSCII-8'] = _("Armenian (ARMSCII-8)");
-$nls['encodings']['ISO-8859-13'] = _("Baltic (ISO-8859-13)");
-$nls['encodings']['ISO-8859-14'] = _("Celtic (ISO-8859-14)");
-$nls['encodings']['ISO-8859-2'] = _("Central European (ISO-8859-2)");
-$nls['encodings']['GB2312'] = _("Chinese Simplified (GB2312)");
-$nls['encodings']['BIG5'] = _("Chinese Traditional (Big5)");
-$nls['encodings']['KOI8-R'] = _("Cyrillic (KOI8-R)");
-$nls['encodings']['windows-1251'] = _("Cyrillic (Windows-1251)");
-$nls['encodings']['KOI8-U'] = _("Cyrillic/Ukrainian (KOI8-U)");
-$nls['encodings']['ISO-8859-7'] = _("Greek (ISO-8859-7)");
-$nls['encodings']['ISO-8859-8-I'] = _("Hebrew (ISO-8859-8-I)");
-$nls['encodings']['ISO-2022-JP'] = _("Japanese (ISO-2022-JP)");
-$nls['encodings']['EUC-KR'] = _("Korean (EUC-KR)");
-$nls['encodings']['ISO-8859-10'] = _("Nordic (ISO-8859-10)");
-$nls['encodings']['ISO-8859-3'] = _("South European (ISO-8859-3)");
-$nls['encodings']['TIS-620'] = _("Thai (TIS-620)");
-$nls['encodings']['ISO-8859-9'] = _("Turkish (ISO-8859-9)");
-$nls['encodings']['UTF-8'] = _("Unicode (UTF-8)");
-$nls['encodings']['VISCII'] = _("Vietnamese (VISCII)");
-$nls['encodings']['ISO-8859-1'] = _("Western (ISO-8859-1)");
-$nls['encodings']['ISO-8859-15'] = _("Western (ISO-8859-15)");
+$nls['encodings']['windows-1256'] = _('Arabic (Windows-1256)');
+$nls['encodings']['ARMSCII-8'] = _('Armenian (ARMSCII-8)');
+$nls['encodings']['ISO-8859-13'] = _('Baltic (ISO-8859-13)');
+$nls['encodings']['ISO-8859-14'] = _('Celtic (ISO-8859-14)');
+$nls['encodings']['ISO-8859-2'] = _('Central European (ISO-8859-2)');
+$nls['encodings']['GB2312'] = _('Chinese Simplified (GB2312)');
+$nls['encodings']['BIG5'] = _('Chinese Traditional (Big5)');
+$nls['encodings']['KOI8-R'] = _('Cyrillic (KOI8-R)');
+$nls['encodings']['windows-1251'] = _('Cyrillic (Windows-1251)');
+$nls['encodings']['KOI8-U'] = _('Cyrillic/Ukrainian (KOI8-U)');
+$nls['encodings']['ISO-8859-7'] = _('Greek (ISO-8859-7)');
+$nls['encodings']['ISO-8859-8-I'] = _('Hebrew (ISO-8859-8-I)');
+$nls['encodings']['ISO-2022-JP'] = _('Japanese (ISO-2022-JP)');
+$nls['encodings']['EUC-KR'] = _('Korean (EUC-KR)');
+$nls['encodings']['ISO-8859-10'] = _('Nordic (ISO-8859-10)');
+$nls['encodings']['ISO-8859-3'] = _('South European (ISO-8859-3)');
+$nls['encodings']['TIS-620'] = _('Thai (TIS-620)');
+$nls['encodings']['ISO-8859-9'] = _('Turkish (ISO-8859-9)');
+$nls['encodings']['UTF-8'] = _('Unicode (UTF-8)');
+$nls['encodings']['VISCII'] = _('Vietnamese (VISCII)');
+$nls['encodings']['ISO-8859-1'] = _('Western (ISO-8859-1)');
+$nls['encodings']['ISO-8859-15'] = _('Western (ISO-8859-15)');
 asort($nls['encodings']);
 
 

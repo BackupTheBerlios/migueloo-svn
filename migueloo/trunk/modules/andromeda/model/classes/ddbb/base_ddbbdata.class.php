@@ -121,7 +121,7 @@ class base_ddbbData extends base_ddbbError
                                                 );
 
                         if($this->ado_con->ErrorMsg() != '' ) {
-                            $this->_setError(Session::getContextValue('ddbbSgbd')." :: ".$this->ado_con->ErrorMsg());
+                            $this->_setError(Session::getContextValue('ddbbSgbd').' :: '.$this->ado_con->ErrorMsg());
                         }
                 }
 
@@ -206,7 +206,7 @@ class base_ddbbData extends base_ddbbError
                 $this->_clearError();
                 $this->table = $table;
 
-                $this->_validateSelectData($table, "count(*)", $cond);
+                $this->_validateSelectData($table, 'count(*)', $cond);
                 if ($this->hasError()) {
                         return 0;
                 }
@@ -215,7 +215,7 @@ class base_ddbbData extends base_ddbbError
                 $this->query = $sql_query;
 
                 $ret_val = $this->_exec($sql_query);
-                //echo "<pre>"; print_r($ret_val); echo "</pre>";
+                //echo '<pre>'; print_r($ret_val); echo '</pre>';
                 return ($ret_val[0][0]);
           }
 
@@ -232,7 +232,7 @@ class base_ddbbData extends base_ddbbError
                 $this->_clearError();
                   $this->table = $table;
 
-                  $sql_query = "insert into ".$table;
+                  $sql_query = 'insert into '.$table;
 
                   if ($fields != '') {
                           $sql_query .= " (".$this->_formatTargetFields ($fields).")";
@@ -270,7 +270,7 @@ class base_ddbbData extends base_ddbbError
 
                 $this->table = $table;
 
-                  $sql_query = "delete from ".$table;
+                  $sql_query = 'delete from '.$table;
 
                   if ($cond != '') {
                           $sql_query .= $this->_formatWhereConds ($cond);
@@ -302,7 +302,7 @@ class base_ddbbData extends base_ddbbError
 
                 $this->table = $table;
 
-                  $sql_query = "update ".$table." set ".$this->_formatUpdateTarget ($fields, $values) ;
+                  $sql_query = 'update '.$table.' set '.$this->_formatUpdateTarget ($fields, $values) ;
 
                 if ($this->hasError()) {
                         return '';
@@ -358,7 +358,7 @@ class base_ddbbData extends base_ddbbError
                 $this->table = array();
 
                 $fields= ereg_replace("[[:space:]]+",'',$table);
-                $fields = explode(",", $fields);
+                $fields = explode(',', $fields);
 
                 for ($i=0; $i < count($fields);$i++) {
                         $this->table[] = $fields[$i];
@@ -386,7 +386,7 @@ class base_ddbbData extends base_ddbbError
                         return $fields;
                 } else {
                         $fields= ereg_replace("[[:space:]]+",'',$fields);
-                        $fields = explode(",", $fields);
+                        $fields = explode(',', $fields);
 
                         if(!is_array($this->table)){
                                 for ($i=0; $i < count($fields);$i++) {
@@ -394,7 +394,7 @@ class base_ddbbData extends base_ddbbError
                                 }
                         } else {
                                 for ($i=0; $i < count($fields);$i++) {
-                                        list($item_table, $item_field) = explode(".", $fields[$i], 2);
+                                        list($item_table, $item_field) = explode('.', $fields[$i], 2);
                                         if(is_null($item_field)){
                                                 $item_field = $item_table;
                                         }
@@ -417,7 +417,7 @@ class base_ddbbData extends base_ddbbError
         {
                 if ($cond !='') {
                         $cond= ereg_replace("[[:space:]]+",' ',$cond);
-                        $elem = explode(" ", $cond);
+                        $elem = explode(' ', $cond);
                         //Debug::oneVar($cond, __FILE__, __LINE__);
                         for($i=0;$i<count($elem);$i = $i+4) {
                                 //20040712
@@ -433,7 +433,7 @@ class base_ddbbData extends base_ddbbError
                                         $elem[$i]         = $this->table.'.'.$elem[$i];
                                         $elem[$i+2]        = "'".$elem[$i+2]."'";
                                 } else {
-                                        list($item_table, $item_field) = explode(".", $elem[$i], 2);
+                                        list($item_table, $item_field) = explode('.', $elem[$i], 2);
                                         if(is_null($item_field)){
                                                 $item_field = $item_table;
                                         }
@@ -441,7 +441,7 @@ class base_ddbbData extends base_ddbbError
                                                 $elem[$i] = $this->table[0].'.'.$elem[$i];
                                         }
 
-                                        list($item_table, $item_field) = explode(".", $elem[$i+2], 2);
+                                        list($item_table, $item_field) = explode('.', $elem[$i+2], 2);
                                         if(is_null($item_field)){
                                                 $item_field = $item_table;
                                                 $elem[$i+2]        = "'".$elem[$i+2]."'";
@@ -457,7 +457,7 @@ class base_ddbbData extends base_ddbbError
                                         $elem[$i+3]        = $elem[$i+3];
                                 }
                         }
-                        $sel_cond = " where ".implode(' ', $elem);
+                        $sel_cond = ' where '.implode(' ', $elem);
                 } else {
                         $sel_cond = '';
                 }
@@ -473,15 +473,15 @@ class base_ddbbData extends base_ddbbError
         {
                 if ($fields !='') {
                         //$fields= ereg_replace("[[:space:]]+",' ',$fields);
-                        $elem = explode(" ", $fields);
+                        $elem = explode(' ', $fields);
                         //Debug::oneVar($cond, __FILE__, __LINE__);
                         for($i=0;$i<count($elem);$i++) {
                             $elem[$i] = trim($elem[$i]);
                                 if(!is_array($this->table)){
                     $elem[$i]         = $this->table.'.'.$elem[$i];
                                 } else {
-                                    if(strchr($elem[$i],".")){
-                                           list($item_table, $item_field) = explode(".", $elem[$i], 2);
+                                    if(strchr($elem[$i],'.')){
+                                           list($item_table, $item_field) = explode('.', $elem[$i], 2);
                                         } else {
                                            $item_table = '';
                        $item_field = $elem[$i];
@@ -508,7 +508,7 @@ class base_ddbbData extends base_ddbbError
                 } else {
                         if(!is_array($fields)){
                                 //$fields= ereg_replace("[[:space:]]+",'',$fields);
-                                $fields = explode(",", $fields);
+                                $fields = explode(',', $fields);
                         }
 
                         for ($i=0; $i < count($fields);$i++) {
@@ -530,7 +530,7 @@ class base_ddbbData extends base_ddbbError
                         return '';
                 } else {
                         $fields= ereg_replace("[[:space:]]+",'',$fields);
-                        $fields = explode(",", $fields);
+                        $fields = explode(',', $fields);
 
                         for ($i=0; $i < count($fields);$i++) {
                                 $fields[$i] = $this->table.'.'.$fields[$i];
@@ -543,7 +543,7 @@ class base_ddbbData extends base_ddbbError
                 } else {
                         if(!is_array($values) ){
                                 $values= ereg_replace("[[:space:]]+",'',$values);
-                                $values = explode(",", $values);
+                                $values = explode(',', $values);
                         }
                 }
 

@@ -356,7 +356,7 @@ class base_Controller
 	 */
     function processPetition()
     {
-    	$arr_menuElem[]= array ("url" => app_URLPath("index.php"), "name" => Session::getValue("siteName"));
+    	$arr_menuElem[]= array ('url' => app_URLPath('index.php'), 'name' => Session::getValue('siteName'));
     }
 
     /**
@@ -366,9 +366,9 @@ class base_Controller
     function _getViewContent()
     {	
     	$ret_val = '';
-        //include_once(Util::base_Path("view/classes/miguel_VPage.class.php"));
-        if(file_exists(Util::app_Path($this->str_moduleName.'/view/classes/'.strtolower($this->str_viewClass).".class.php"))) {
-            include (Util::app_Path($this->str_moduleName.'/view/classes/'.strtolower($this->str_viewClass).".class.php"));
+        //include_once(Util::base_Path('view/classes/miguel_VPage.class.php'));
+        if(file_exists(Util::app_Path($this->str_moduleName.'/view/classes/'.strtolower($this->str_viewClass).'.class.php'))) {
+            include (Util::app_Path($this->str_moduleName.'/view/classes/'.strtolower($this->str_viewClass).'.class.php'));
             $obj_view = new $this->str_viewClass($this->str_pageTitle, $this->arr_commarea);
 		}
 
@@ -388,8 +388,8 @@ class base_Controller
 	 */
 	function giveControl($moduleName, $class)
 	{
-		if(file_exists(Util::app_Path($moduleName.'/control/classes/'.strtolower($class).".class.php"))) {
-            include (Util::app_Path($moduleName.'/control/classes/'.strtolower($class).".class.php"));
+		if(file_exists(Util::app_Path($moduleName.'/control/classes/'.strtolower($class).'.class.php'))) {
+            include (Util::app_Path($moduleName.'/control/classes/'.strtolower($class).'.class.php'));
             $new_control = new $class();
 		}
 		
@@ -407,7 +407,7 @@ class base_Controller
 	 */
     function log($message, $priority)
     {	
-    	include_once(Util::base_Path("include/classes/loghandler.class.php"));
+    	include_once(Util::base_Path('include/classes/loghandler.class.php'));
   		LogHandler::log($message, $this->str_moduleName.'_controller', $priority);
     }
     

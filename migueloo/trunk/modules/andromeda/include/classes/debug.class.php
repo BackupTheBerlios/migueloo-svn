@@ -30,7 +30,7 @@
 /*
      Modo de uso
      
-     Debug::msg("Hola", __FILE__, __LINE__);
+     Debug::msg('Hola', __FILE__, __LINE__);
 */
 include_once(Util::base_Path('include/classes/lensdebug.class.php'));
 

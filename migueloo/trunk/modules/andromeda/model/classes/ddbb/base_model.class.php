@@ -34,7 +34,7 @@
 /**
  *
  */ 
-include_once(MIGUELBASE_DIR."model/classes/ddbb/base_ddbberror.class.php");
+include_once(MIGUELBASE_DIR.'model/classes/ddbb/base_ddbberror.class.php');
 
 /**
  * Define la clase modelo base de miguel.
@@ -99,7 +99,7 @@ class base_Model extends base_ddbbError
 	function useDDBB()
 	{
 		//Include database access class
-		require_once Util::base_Path("model/classes/ddbb/base_ddbbdata.class.php");
+		require_once Util::base_Path('model/classes/ddbb/base_ddbbdata.class.php');
 		//Instanciamos la clase responsable
 		$this->obj_data = new base_ddbbData();
 		$this->obj_data->openConnection();
@@ -326,7 +326,7 @@ class base_Model extends base_ddbbError
 	 */
     function log($message, $priority)
     {	
-    	include_once(Util::base_Path("include/classes/loghandler.class.php"));
+    	include_once(Util::base_Path('include/classes/loghandler.class.php'));
   		LogHandler::log($message, $this->str_moduleName.'_controller', $priority);
     }
 }

@@ -49,13 +49,13 @@ require_once (MIGUELBASE_DIR.'include/phpmailer/class.phpmailer.php');
  */
 
 class miguel_mailer extends phpmailer {
-    var $Host     = "smtp.telefonica.net";
-    var $Mailer   = "smtp";                         // Alternative to IsSMTP()
+    var $Host     = 'smtp.telefonica.net';
+    var $Mailer   = 'smtp';                         // Alternative to IsSMTP()
     var $WordWrap = 75;
 
     var $SMTPAuth = true;     // turn on SMTP authentication
-    var $Username = "";  // SMTP username
-    var $Password = ""; // SMTP password
+    var $Username = '';  // SMTP username
+    var $Password = ''; // SMTP password
     
     // Replace the default error_handler
     function error_handler($msg) {

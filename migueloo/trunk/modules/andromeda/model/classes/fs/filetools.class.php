@@ -19,10 +19,10 @@ class fileTools
 
 	function replace_dangerous_char($string)
 	{
-		$search[]="\/"; $replace[]="-";
-		$search[]="\\"; $replace[]="-";
-		$search[]="\|"; $replace[]="-";
-		$search[]="\""; $replace[]="";
+		$search[]="\/"; $replace[]='-';
+		$search[]="\\"; $replace[]='-';
+		$search[]="\|"; $replace[]='-';
+		$search[]="\""; $replace[]='';
 
 		foreach($search as $key=>$char ) {
 			$string = str_replace($char, $replace[$key], $string);
@@ -44,11 +44,11 @@ class fileTools
 
 	function php2phps ($fileName)
 	{
-		$fileName = ereg_replace(".php$", ".phps", $fileName);
+		$fileName = ereg_replace('.php$', '.phps', $fileName);
 		//Antonio: Other scripts extensions
-		$fileName = ereg_replace(".phtml", ".phps", $fileName);
-		$fileName = ereg_replace(".asp", ".asps", $fileName);
-		$fileName = ereg_replace(".pl", ".pls", $fileName);
+		$fileName = ereg_replace('.phtml', '.phps', $fileName);
+		$fileName = ereg_replace('.asp', '.asps', $fileName);
+		$fileName = ereg_replace('.pl', '.pls', $fileName);
 		return $fileName;
 	}
 
@@ -99,14 +99,14 @@ class fileTools
 		$handle = @opendir($dirPath);
 
 		while ( $element = @readdir($handle) ) {
-			if ( $element == "." || $element == "..") {
+			if ( $element == '.' || $element == '..') {
 				continue; // skip the current and parent directories
 			}
 			if ( @is_file($element) ) {
 				$sumSize += filesize($element);
 			}
 			if ( @is_dir($element) ) {
-				$dirList[] = $dirPath . "/" . $element;
+				$dirList[] = $dirPath . '/' . $element;
 			}
 		}
 
@@ -149,34 +149,34 @@ class fileTools
 
 			static $mimeType = array();
 
-			$mimeType[] = "application/msword";		$extension[] =".doc";
-			$mimeType[] = "application/rtf";		$extension[] =".rtf";
-			$mimeType[] = "application/vnd.ms-powerpoint";	$extension[] =".ppt";
-			$mimeType[] = "application/vnd.ms-excel";	$extension[] =".xls";
-			$mimeType[] = "application/pdf";		$extension[] =".pdf";
-			$mimeType[] = "application/postscript";		$extension[] =".ps";
-			$mimeType[] = "application/mac-binhex40";	$extension[] =".hqx";
-			$mimeType[] = "application/x-gzip";		$extension[] ="tar.gz";
-			$mimeType[] = "application/x-shockwave-flash";	$extension[] =".swf";
-			$mimeType[] = "application/x-stuffit";		$extension[] =".sit";
-			$mimeType[] = "application/x-tar";		$extension[] =".tar";
-			$mimeType[] = "application/zip";		$extension[] =".zip";
-			$mimeType[] = "application/x-tar";		$extension[] =".tar";
-			$mimeType[] = "text/html";			$extension[] =".htm";
-			$mimeType[] = "text/plain";			$extension[] =".txt";
-			$mimeType[] = "text/rtf";			$extension[] =".rtf";
-			$mimeType[] = "image/gif";			$extension[] =".gif";
-			$mimeType[] = "image/jpeg";			$extension[] =".jpg";
-			$mimeType[] = "image/png";			$extension[] =".png";
-			$mimeType[] = "audio/midi";			$extension[] =".mid";
-			$mimeType[] = "audio/mpeg";			$extension[] =".mp3";
-			$mimeType[] = "audio/x-aiff";			$extension[] =".aif";
-			$mimeType[] = "audio/x-pn-realaudio";		$extension[] =".rm";
-			$mimeType[] = "audio/x-pn-realaudio-plugin";	$extension[] =".rpm";
-			$mimeType[] = "audio/x-wav";			$extension[] =".wav";
-			$mimeType[] = "video/mpeg";			$extension[] =".mpg";
-			$mimeType[] = "video/quicktime";		$extension[] =".mov";
-			$mimeType[] = "video/x-msvideo";		$extension[] =".avi";
+			$mimeType[] = 'application/msword';		$extension[] ='.doc';
+			$mimeType[] = 'application/rtf';		$extension[] ='.rtf';
+			$mimeType[] = 'application/vnd.ms-powerpoint';	$extension[] ='.ppt';
+			$mimeType[] = 'application/vnd.ms-excel';	$extension[] ='.xls';
+			$mimeType[] = 'application/pdf';		$extension[] ='.pdf';
+			$mimeType[] = 'application/postscript';		$extension[] ='.ps';
+			$mimeType[] = 'application/mac-binhex40';	$extension[] ='.hqx';
+			$mimeType[] = 'application/x-gzip';		$extension[] ='tar.gz';
+			$mimeType[] = 'application/x-shockwave-flash';	$extension[] ='.swf';
+			$mimeType[] = 'application/x-stuffit';		$extension[] ='.sit';
+			$mimeType[] = 'application/x-tar';		$extension[] ='.tar';
+			$mimeType[] = 'application/zip';		$extension[] ='.zip';
+			$mimeType[] = 'application/x-tar';		$extension[] ='.tar';
+			$mimeType[] = 'text/html';			$extension[] ='.htm';
+			$mimeType[] = 'text/plain';			$extension[] ='.txt';
+			$mimeType[] = 'text/rtf';			$extension[] ='.rtf';
+			$mimeType[] = 'image/gif';			$extension[] ='.gif';
+			$mimeType[] = 'image/jpeg';			$extension[] ='.jpg';
+			$mimeType[] = 'image/png';			$extension[] ='.png';
+			$mimeType[] = 'audio/midi';			$extension[] ='.mid';
+			$mimeType[] = 'audio/mpeg';			$extension[] ='.mp3';
+			$mimeType[] = 'audio/x-aiff';			$extension[] ='.aif';
+			$mimeType[] = 'audio/x-pn-realaudio';		$extension[] ='.rm';
+			$mimeType[] = 'audio/x-pn-realaudio-plugin';	$extension[] ='.rpm';
+			$mimeType[] = 'audio/x-wav';			$extension[] ='.wav';
+			$mimeType[] = 'video/mpeg';			$extension[] ='.mpg';
+			$mimeType[] = 'video/quicktime';		$extension[] ='.mov';
+			$mimeType[] = 'video/x-msvideo';		$extension[] ='.avi';
 
 
 			/*** Check if the MIME type send by the browser is in the table ***/
@@ -274,13 +274,13 @@ class fileTools
 			$handle = @opendir($dirPath) ;
 
 			while ($element = @readdir($handle) ) {
-				if ( $element == "." || $element == "..") {
+				if ( $element == '.' || $element == '..') {
 					continue;	// skip current and parent directories
 				} elseif ( @is_file($element) ) {
 					@unlink($element);
 				}
 				elseif ( @is_dir ($element) ) {
-					$dirToRemove[] = $dirPath."/".$element;
+					$dirToRemove[] = $dirPath.'/'.$element;
 				}
 			}
 
@@ -313,7 +313,7 @@ class fileTools
 		$path = $this->baseWorkDir . dirname($filePath);
 		$oldFileName = basename($filePath);
 
-		if ( $this->check_name_exist( $path . "/" . $newFileName )
+		if ( $this->check_name_exist( $path . '/' . $newFileName )
 			&& $newFileName != $oldFileName) {
 			return false;
 		} else {
@@ -321,7 +321,7 @@ class fileTools
 			if ((!ereg("[[:print:]]+\.[[:alnum:]]+$", $newFileName))
 				&& ereg("[[:print:]]+\.([[:alnum:]]+)$", $olFileName, $extension)) {
 
-				$newFileName .= "." . $extension[1];
+				$newFileName .= '.' . $extension[1];
 			}
 			/*** Prevent file name with php extension ***/
 			$newFileName = $this->php2phps($newFileName);
@@ -352,18 +352,18 @@ class fileTools
 	{
 		if ( check_name_exist($source) ) {
 			$fileName = basename($source);
-			if ( check_name_exist($target."/".$fileName) ) {
+			if ( check_name_exist($target.'/'.$fileName) ) {
 				return false;
 			} else {	/*** File case ***/
 				if ( @is_file($source) ) {
-					@copy($source , $target."/".$fileName);
+					@copy($source , $target.'/'.$fileName);
 					@unlink($source);
 					return true;
 				}
 				/*** Directory case ***/
 				elseif ( @is_dir($source)) {
 					// check to not copy the directory inside itself
-					if ( ereg("^".$source, $target) ) {
+					if ( ereg('^'.$source, $target) ) {
 						return false;
 
 					} else {
@@ -390,20 +390,20 @@ class fileTools
 	{
 		// extract directory name - create it at destination - update destination trail
 		$dirName = basename($origDirPath);
-		@mkdir ($destination."/".$dirName, 0775);
-		$destinationTrail = $destination."/".$dirName;
+		@mkdir ($destination.'/'.$dirName, 0775);
+		$destinationTrail = $destination.'/'.$dirName;
 
 		@chdir ($origDirPath) ;
 		$handle = @opendir($origDirPath);
 
 		while ($element = @readdir($handle) ) {
-			if ( $element == "." || $element == "..") {
+			if ( $element == '.' || $element == '..') {
 				continue; // skip the current and parent directories
 			} elseif ( @is_file($element) ) {
-				@copy($element, $destinationTrail."/".$element);
+				@copy($element, $destinationTrail.'/'.$element);
 				@unlink($element) ;
 			} elseif ( @is_dir($element) ) {
-				$dirToCopy[] = $origDirPath."/".$element;
+				$dirToCopy[] = $origDirPath.'/'.$element;
 			}
 		}
 

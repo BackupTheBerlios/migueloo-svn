@@ -4,7 +4,7 @@
     +----------------------------------------------------------------------+
     | base_Error.class.php    1.3                                         |
     +----------------------------------------------------------------------+
-    | This software is part of miguel    version 0.1.1 $Revision: 1.4 $    |
+    | This software is part of miguel    version 0.1.1 $Revision: 1.5 $    |
     +----------------------------------------------------------------------+
     | Copyright (c) 2003, Asociacion Hispalinux                            |
     +----------------------------------------------------------------------+
@@ -78,7 +78,7 @@ class base_Error
 		$GLOBALS['locale'] = miguel_getBrowserLang();
 		@setlocale(LC_ALL, $GLOBALS['locale']);
 	
-		$gettext_domain = "errors";
+		$gettext_domain = 'errors';
 		bindtextdomain($gettext_domain, miguel_webDir().'/miguel/gettext');
 		textdomain($gettext_domain);
 		*/
@@ -131,10 +131,10 @@ class base_Error
 	  */
 	function showErrors ()
 	{
-		if ($this->hasError() && !strstr(substr($_SERVER["PHP_SELF"], -33), "miguel/messages/error_message.php")) {
-			$_SESSION["errors"] = $this->ArrayErrors;
-			$_SESSION["errors_args"] = $this->ArrayErrorsArgs;
-			header("Location: ".$GLOBALS['urlServer']."miguel/messages/error_message.php");
+		if ($this->hasError() && !strstr(substr($_SERVER['PHP_SELF'], -33), 'miguel/messages/error_message.php')) {
+			$_SESSION['errors'] = $this->ArrayErrors;
+			$_SESSION['errors_args'] = $this->ArrayErrorsArgs;
+			header('Location: '.$GLOBALS['urlServer'].'miguel/messages/error_message.php');
 		}
 	}
 
@@ -149,14 +149,14 @@ class base_Error
           *            Array args given to this function should be similar to array("page.php", "myuser");
   	  * @private
 	  */
-	function _addError ($error, $args_array="")
+	function _addError ($error, $args_array='')
 	{
         	if ($this->validError($error)) {
                         if (!is_array($args_array) && empty($args_array))
                         {
 			        $this->ArrayErrors[]     = $error;
 			        $this->bError            = TRUE;
-                        } elseif (count($args_array) == substr_count(agt($error), "%")) {
+                        } elseif (count($args_array) == substr_count(agt($error), '%')) {
                                 $this->ArrayErrorsArgs[$error] = $args_array;
 			        $this->ArrayErrors[]     = $error;
 			        $this->bError            = TRUE;
