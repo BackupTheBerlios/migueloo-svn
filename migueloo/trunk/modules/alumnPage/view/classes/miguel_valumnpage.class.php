@@ -30,7 +30,7 @@
 /**
  * Include classes library
  */
-include_once (Util::app_Path("common/view/classes/miguel_vmenu.class.php"));
+include_once (Util::app_Path('common/view/classes/miguel_vmenu.class.php'));
 
 class miguel_VAlumnPage extends miguel_VMenu
 {
@@ -43,7 +43,7 @@ class miguel_VAlumnPage extends miguel_VMenu
         {
                 $table = &html_table(Session::getContextValue('mainInterfaceWidth'),0,0,0);
                 $row = html_tr();
-                $image = html_td('', '',  html_img(Theme::getThemeImagePath("invisible.gif"), 20, 14));
+                $image = html_td('', '',  html_img(Theme::getThemeImagePath('invisible.gif'), 20, 14));
                 $image->set_tag_attribute('align', 'right');
                 $progress = html_td('', '', 'Mi progreso');
                 $state = html_td('', '', 'Estado Actual');
@@ -78,13 +78,13 @@ class miguel_VAlumnPage extends miguel_VMenu
         {
             $row = html_tr();
 
-                $from = html_td('ptabla01', "", html_b($from_to));
-                $subject = html_td('ptabla01', "", html_b('Asunto'));
-                $date = html_td('ptabla01', "", html_b('Recibido'));
+                $from = html_td('ptabla01', '', html_b($from_to));
+                $subject = html_td('ptabla01', '', html_b('Asunto'));
+                $date = html_td('ptabla01', '', html_b('Recibido'));
 
-                 $from->set_tag_attribute('width',"30%");
-                 $subject->set_tag_attribute('width',"50%");
-                 $date->set_tag_attribute('width',"20%");
+                 $from->set_tag_attribute('width', '30%');
+                 $subject->set_tag_attribute('width', '50%');
+                 $date->set_tag_attribute('width', '20%');
 
                 $row->add($from);
                 $row->add($subject);
@@ -203,9 +203,9 @@ class miguel_VAlumnPage extends miguel_VMenu
         {
             $row = html_tr();
 
-                $name = html_td('ptabla02', "", $strName);
-                $number = html_td('ptabla03', "", $strNumber);
-                $name->set_tag_attribute('width','80%');
+                $name = html_td('ptabla02', '', $strName);
+                $number = html_td('ptabla03', '', $strNumber);
+                $name->set_tag_attribute('width', '80%');
                 $row->add($name);
                 $row->add($number);
 
@@ -218,10 +218,10 @@ class miguel_VAlumnPage extends miguel_VMenu
 
         $ret_val->add(html_br(2));
 
-                $table = &html_table(Session::getContextValue('mainInterfaceWidth'),0,2,2);
+                $table = &html_table(Session::getContextValue('mainInterfaceWidth'), 0, 2, 2);
 
-                $title = html_td('ptabla01', "", 'Para hoy');
-                $title->set_tag_attribute('colspan',2);
+                $title = html_td('ptabla01', '', 'Para hoy');
+                $title->set_tag_attribute('colspan', 2);
                 $table->add($title);
 
                  $arrMessages = $this->getViewVariable('arrMessages');
@@ -268,7 +268,7 @@ class miguel_VAlumnPage extends miguel_VMenu
                                   $div->add($this->add_sectionHead('Mensajería ' . "($unreaded)",'modules/email.png'));
                                 $div->add($this->add_inbox());
 
-                                $div->add(html_img(Theme::getThemeImagePath("hr01.gif"), 400, 15));
+                                $div->add(html_img(Theme::getThemeImagePath('hr01.gif'), 400, 15));
                             $div->add(html_br());
                             //$div->add(html_hr());
                                 $notice_array=($this->getViewVariable('notice_array'));
@@ -282,7 +282,7 @@ class miguel_VAlumnPage extends miguel_VMenu
 
                                 $div_line = html_div();
                                 $div_line->set_tag_attribute('align', 'right');
-                                $div_line->add(html_img(Theme::getThemeImagePath("hr02.gif"), 400, 15));
+                                $div_line->add(html_img(Theme::getThemeImagePath('hr02.gif'), 400, 15));
 
                                 $div->add($div_line);
                                 break;

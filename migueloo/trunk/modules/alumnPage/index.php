@@ -29,10 +29,10 @@
 */
 
 //Carga el código de Andromeda
-include_once ("../common/miguel_base.inc.php");
+include_once ('../common/miguel_base.inc.php');
 
 //Carga el código del controlador
-include_once (Util::app_Path("alumnPage/control/classes/miguel_calumnpage.class.php"));
+include_once (Util::app_Path('alumnPage/control/classes/miguel_calumnpage.class.php'));
 
 
 //Instancia un Controlador en memoria. Esto al mismo tiempo inicializa el modelo y la vista

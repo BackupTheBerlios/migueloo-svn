@@ -69,10 +69,10 @@ class miguel_CAlumnPage extends miguel_Controller
                 $this->clearNavBarr();
 				$this->addNavElement(Util::format_URLPath('alumnPage/index.php'), agt('Inicio'));
 
-                $this->setPageTitle("miguel Alumn Page");
+                $this->setPageTitle('miguel Alumn Page');
                 $this->setMessage('');
 
-                $this->setHelp("");
+                $this->setHelp('');
         }
 }
 ?>

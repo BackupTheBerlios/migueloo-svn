@@ -74,7 +74,7 @@ class miguel_MAlumnPage extends base_Model
                 function getNotices()
     {
 
-                         $ret_val = $this->Select('notice', 'author, subject, text, time, notice_id', "");
+                         $ret_val = $this->Select('notice', 'author, subject, text, time, notice_id', '');
 
 
             if ($this->hasError()) {
