@@ -31,26 +31,26 @@
  */
 //This variable is necessary. Don`t delete next line. 
 $phphtmllib = MIGUELBASE_PHPHTMLLIB; 
-include_once($phphtmllib."/includes.inc");
-include_once($phphtmllib."/form/includes.inc");
+include_once($phphtmllib.'/includes.inc');
+include_once($phphtmllib.'/form/includes.inc');
 
 /**
  * Include the control libraries
  */
-$viewlib = MIGUELBASE_DIR."view/classes/";
-$includelib = MIGUELBASE_DIR."include/classes/";
+$viewlib = MIGUELBASE_DIR.'view/classes/';
+$includelib = MIGUELBASE_DIR.'include/classes/';
 
-//include($viewlib."base_element.class.php");
-//include($viewlib."base_header.class.php");
-//include($viewlib."base_footer.class.php");
-//include($viewlib."base_layoutpage.class.php");
-include($viewlib."base_formcontent.class.php");
-include($viewlib."base_submitbutton.class.php");
-include($viewlib."base_FETime.class.php");
-include($viewlib."base_FEImgRadioGroup.class.php");
-include($viewlib."base_FERadioGroup.class.php");
+//include($viewlib.'base_element.class.php');
+//include($viewlib.'base_header.class.php');
+//include($viewlib.'base_footer.class.php');
+//include($viewlib.'base_layoutpage.class.php');
+include($viewlib.'base_formcontent.class.php');
+include($viewlib.'base_submitbutton.class.php');
+include($viewlib.'base_FETime.class.php');
+include($viewlib.'base_FEImgRadioGroup.class.php');
+include($viewlib.'base_FERadioGroup.class.php');
 
-include_once($includelib."theme.class.php");
+include_once($includelib.'theme.class.php');
 
 //Para tener la versión de phpHtmlLib usar la función
 //   phphtmllib_get_version()  debe devolver un string
