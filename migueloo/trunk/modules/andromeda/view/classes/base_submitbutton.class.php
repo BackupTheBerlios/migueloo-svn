@@ -69,9 +69,9 @@ class base_SubmitButton extends FEButton
     function get_element() {
 
         $attributes = $this->_build_element_attributes();
-        $attributes["type"] = "submit";
+        $attributes['type'] = 'submit';
 
-        $attributes["value"] = $this->get_value();
+        $attributes['value'] = $this->get_value();
 
         $tag = new INPUTtag($attributes);
 

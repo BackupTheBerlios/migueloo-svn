@@ -78,23 +78,23 @@ class FEImgRadioGroup extends FormElement
 
     function _get_index_element($index) {
         $attributes = $this->_build_element_attributes();
-        $attributes["type"] = "radio";
+        $attributes['type'] = 'radio';
 
         //list($name, $value) = each($this->_data_list[$index]);
 		
-        $attributes["value"] = $index + 1;
+        $attributes['value'] = $index + 1;
 
         if (($value == $this->get_value()))
-            $attributes[] = "checked";
+            $attributes[] = 'checked';
 
         $tag = new INPUTtag($attributes);
 
         //now build the href so we can click on it.
-        //$attr["class"] ="form_link";
-        //$attr["href"] = "javascript:void(0)";
-        //$js = "javascript: function check(item){item.click();} ".
+        //$attr['class'] ='form_link';
+        //$attr['href'] = 'javascript:void(0)';
+        //$js = 'javascript: function check(item){item.click();} '.
         //      "check(".$this->get_element_name().".item($index));";
-        //$attr["onclick"] = $js;
+        //$attr['onclick'] = $js;
 
         $href = new Atag($attr, $value);
 

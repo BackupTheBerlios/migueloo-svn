@@ -153,8 +153,8 @@ class FETime extends FEBoxElement
         $value = $this->get_value();
 
 //         we make sure that the date is valid
-        if ($value["hour"] < 0 || $value["hour"] > 23 ||$value["minute"] < 0 || $value["minute"] > 59) {
-            $this->set_error_message("Invalid date");
+        if ($value['hour'] < 0 || $value['hour'] > 23 ||$value['minute'] < 0 || $value['minute'] > 59) {
+            $this->set_error_message('Invalid date');
             return FALSE;
         }
         return TRUE;

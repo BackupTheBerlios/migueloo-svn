@@ -34,7 +34,7 @@
 /**
  *
  */
-include_once(Util::base_Path("view/includes.inc.php"));
+include_once(Util::base_Path('view/includes.inc.php'));
 
 /**
  * Define la clase base para las pantallas de miguel.
@@ -127,7 +127,7 @@ class base_LayoutPage extends PageWidget
 		$this->registry->pushApp('common');
 
 
-		$file_name = Util::app_Path($str_moduleName.'/view/classes/'.strtolower($str_className).".class.php");
+		$file_name = Util::app_Path($str_moduleName.'/view/classes/'.strtolower($str_className).'.class.php');
 		
 		/*
 		if($this->issetViewVariable('wm')){
@@ -186,7 +186,7 @@ class base_LayoutPage extends PageWidget
                 }
 				$path_action = Util::format_URLPath($str_url, $str_param);
 				$link = html_a($path_action);
-				//$link = html_a("#","");
+				//$link = html_a('#','');
                 $link->add(html_img(Theme::getThemeImagePath($str_image), null, null, null, $str_image_text));
                 /*
 				if($str_param == ''){
@@ -196,8 +196,8 @@ class base_LayoutPage extends PageWidget
                 }
 
                 $path_action = Util::format_URLPath($str_url, $str_param);
-                $link->set_tag_attribute("onClick", "javascript:newWin('".$path_action."', ".$int_w.", ".$int_h.", ".$int_x.", ".$int_y.")");
-				$link->set_tag_attribute("onClick", "javascript:ponerIframe('".$path_action."')");
+                $link->set_tag_attribute('onClick', "javascript:newWin('".$path_action."', ".$int_w.", ".$int_h.", ".$int_x.", ".$int_y.")");
+				$link->set_tag_attribute('onClick', "javascript:ponerIframe('".$path_action."')");
 				*/
 				$link->set_tag_attribute('target', 'myFrame');
 
@@ -299,7 +299,7 @@ class base_LayoutPage extends PageWidget
         //Debug::oneVar($str_aro_elem,__FILE__, __LINE__);
         //Incluimos el API de phpgacl
         //define('ADODB_DIR', MIGUELBASE_ADODB);
-               include_once(Util::base_Path("include/gacl/gacl.class.php"));
+               include_once(Util::base_Path('include/gacl/gacl.class.php'));
 
         //Probar el sistema de cache: ¿para qué? ADOdb cacheado ya.
                $arr_gacl_options = array(

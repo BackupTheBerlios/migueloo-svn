@@ -103,7 +103,7 @@ class base_FormContent extends FormContent
 	   
 	   $phpcode .= ');';
 	   
-	   //echo "<pre>"; print_r($newparams); echo $phpcode; echo "</pre>";
+	   //echo '<pre>'; print_r($newparams); echo $phpcode; echo '</pre>';
 	   $elem = eval($phpcode);
 	   $elem->set_label_text($newparams[0]);
 	   
@@ -115,7 +115,7 @@ class base_FormContent extends FormContent
 	    $button = new  FESubmitButton($value, $label);
 	    $button->set_style_attribute('id');
 	    $button->set_attribute('loc');
-	    $button->onClick("disable=false");
+	    $button->onClick('disable=false');
 	   
 	    return($button);
     }
@@ -132,8 +132,8 @@ class base_FormContent extends FormContent
     function _showElement($name, $tab_index, $label, $text, $element, $align )
     {
 	    $label = $this->_getShowElement($name, $tab_index, $label, $text, $element);
-        $elem = html_td("", $align, $label);
-        //$elem->set_id("identification");
+        $elem = html_td('', $align, $label);
+        //$elem->set_id('identification');
 	
 	    return($elem);
     }
