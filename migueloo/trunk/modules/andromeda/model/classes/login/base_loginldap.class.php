@@ -46,42 +46,42 @@ class base_loginLDAP
   
   function _encrypt($str_userpswd)
   {
-   echo "&lt;h3>Prueba de consulta LDAP&lt;/h3>";
-    echo "Conectando ...";
-    $ds=ldap_connect("localhost");  
-    echo "El resultado de la conexi&oacute;n es ".$ds."&lt;p>";
+   echo '&lt;h3>Prueba de consulta LDAP&lt;/h3>';
+    echo 'Conectando ...';
+    $ds=ldap_connect('localhost');  
+    echo 'El resultado de la conexi&oacute;n es '.$ds.'&lt;p>';
     
     if ($ds) 
     {
-      echo "Autentificandose  ...";
+      echo 'Autentific&aacute;ndose  ...';
       $r=ldap_bind($ds);    
                              
-      echo "El resultado de la autentificaci&oacute;n es ".$r."&lt;p>";
+      echo 'El resultado de la autentificaci&oacute;n es '.$r.'&lt;p>';
       
-      echo "Buscando (sn=P*) ...";
+      echo 'Buscando (sn=P*) ...';
      
-      $sr=ldap_search($ds,"o=halys, c=halys", "sn=h*"); 
-      echo "El resultado de la b&uacute;squeda es ".$sr."&lt;p>";
+      $sr=ldap_search($ds,'o=halys, c=halys', 'sn=h*'); 
+      echo 'El resultado de la b&uacute;squeda es '.$sr.'&lt;p>';
       
-      echo "El n&uacute;mero de entradas devueltas es ".ldap_count_entries($ds,$sr)."&lt;p>";
+      echo 'El n&uacute;mero de entradas devueltas es '.ldap_count_entries($ds,$sr).'&lt;p>';
       
-      echo "Recuperando entradas ...&lt;p>";
+      echo 'Recuperando entradas ...&lt;p>';
       $info = ldap_get_entries($ds, $sr);
-      echo "Devueltos datos de ".$info["count"]." entradas:&lt;p>";
+      echo 'Devueltos datos de '.$info['count'].' entradas:&lt;p>';
       
-      for ($i=0; $i<$info["count"]; $i++) 
+      for ($i=0; $i<$info['count']; $i++) 
       {
-        echo "dn es: ". $info[$i]["dn"] ."&lt;br>";
-        echo "La primera entrada cn es: ". $info[$i]["cn"][0] ."&lt;br>";
+        echo 'dn es: '. $info[$i]['dn'] .'&lt;br>';
+        echo 'La primera entrada cn es: '. $info[$i]['cn'][0] .'&lt;br>';
       }
       
-      echo "Cerrando conexi&oacute;n";
+      echo 'Cerrando conexi&oacute;n';
       ldap_close($ds);
     
     } 
     else 
     {
-      echo "&lt;h4>Ha sido imposible conectar al servidor LDAP&lt;/h4>";
+      echo '&lt;h4>Ha sido imposible conectar al servidor LDAP&lt;/h4>';
     }   
   }
 

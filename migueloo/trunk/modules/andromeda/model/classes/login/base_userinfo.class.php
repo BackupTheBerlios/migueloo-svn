@@ -39,7 +39,7 @@
  *
  */
  
-include_once(Util::app_Path("common/control/classes/base_login.php"));
+include_once(Util::app_Path('common/control/classes/base_login.php'));
  
 class miguel_UserInfo
 {
@@ -57,7 +57,7 @@ class miguel_UserInfo
     		$ret_val = null;
     	} else {
     	   //dbg_var($ret_sql[0], __FILE__, __LINE__);
-    	   if($ret_sql[0]["idUser"] == 1) {
+    	   if($ret_sql[0]['idUser'] == 1) {
     	       $ret_val = true;
     	   } else {
     	       $ret_val = false;
@@ -82,7 +82,7 @@ class miguel_UserInfo
     		$ret_val = null;
     	} else {
     	   //dbg_var($ret_sql[0], __FILE__, __LINE__);
-    	   if($ret_sql[0]["password"] == $str_password) {
+    	   if($ret_sql[0]['password'] == $str_password) {
     	       $ret_val = true;
     	   } else {
     	       $ret_val = false;
@@ -101,18 +101,18 @@ class miguel_UserInfo
     function getInfo(&$obj_model, $str_user)
     {
     	if($str_user == '') {
-    	   $ret_val = array ( "user_id"           => '',
-                            "name"          => '',
-                            "surname"       => '',
-                            "username"      => 'guest',
-                            "password"      => '',
-                            "email"         => '',
-                            "statut"        => '',
-                            "treatment"     => '',
-                            "language"      => '',
-                            "theme"         => '',
-                            "profile"       => 'guest',
-                            "isadmin"       => false);
+    	   $ret_val = array ( 'user_id'           => '',
+                            'name'          => '',
+                            'surname'       => '',
+                            'username'      => 'guest',
+                            'password'      => '',
+                            'email'         => '',
+                            'statut'        => '',
+                            'treatment'     => '',
+                            'language'      => '',
+                            'theme'         => '',
+                            'profile'       => 'guest',
+                            'isadmin'       => false);
     	} else {
             $ret_sql = $obj_model->Select('user',
                                           'user_id, nom, prenom, username, password, email, statut, idtreatment, language, theme, profile',
@@ -122,17 +122,17 @@ class miguel_UserInfo
     		  $ret_val = null;
     	   } else {
         	  //No incluimos información de la "tabla" o modelo de datos
-                  $ret_val = array ( "user_id"       => $ret_sql[0]["user_id"],
-        	                     "name"          => $ret_sql[0]["nom"],
-        	                     "surname"       => $ret_sql[0]["prenom"],
-        	                     "username"      => $ret_sql[0]["username"],
-        	                     "password"      => $ret_sql[0]["password"],
-        	                     "email"         => $ret_sql[0]["email"],
-        	                     "statut"        => $ret_sql[0]["statut"],
-        	                     "treatment"     => $ret_sql[0]["idtreatment"],
-        	                     "language"      => $ret_sql[0]["language"],
-                               "theme"         => $ret_sql[0]["theme"],
-                               "profile"       => $ret_sql[0]["profile"]);
+                  $ret_val = array ( 'user_id'       => $ret_sql[0]['user_id'],
+        	                     'name'          => $ret_sql[0]['nom'],
+        	                     'surname'       => $ret_sql[0]['prenom'],
+        	                     'username'      => $ret_sql[0]['username'],
+        	                     'password'      => $ret_sql[0]['password'],
+        	                     'email'         => $ret_sql[0]['email'],
+        	                     'statut'        => $ret_sql[0]['statut'],
+        	                     'treatment'     => $ret_sql[0]['idtreatment'],
+        	                     'language'      => $ret_sql[0]['language'],
+                               'theme'         => $ret_sql[0]['theme'],
+                               'profile'       => $ret_sql[0]['profile']);
     	   }
  	  }
 
@@ -146,8 +146,8 @@ class miguel_UserInfo
     if($obj_login->login($obj_model, $str_username, $str_userpswd)) 
     {
       $arr_userinfo = $this->getInfo($obj_model, $str_username);
-      $arr_userinfo["isadmin"] = $this->isAdmin($obj_model, $str_username);
-      base_Controller::setSessionArray("userinfo", $arr_userinfo);
+      $arr_userinfo['isadmin'] = $this->isAdmin($obj_model, $str_username);
+      base_Controller::setSessionArray('userinfo', $arr_userinfo);
       $ret_val = true;
     }    
     return $ret_val;

@@ -50,7 +50,7 @@
  
  // IMPORTANTISIMO HAY QUE TENER ACTIVADA LA EXTENSION MCRYPT.DLL PARA TRABAJAR
  // CON ESTE MODULO
-include_once(Util::app_Path("common/control/classes/base_loginbase.php"));
+include_once(Util::app_Path('common/control/classes/base_loginbase.php'));
  
 class base_loginMCRYPT extends base_loginBase
 {
@@ -83,7 +83,7 @@ class base_loginMCRYPT extends base_loginBase
   		$ret_val = false;
   	} else {
   	   //dbg_var($ret_sql[0], __FILE__, __LINE__);
-  	   if($ret_sql[0]["password"] == $this->_encrypt($str_username, $str_userpswd)) {
+  	   if($ret_sql[0]['password'] == $this->_encrypt($str_username, $str_userpswd)) {
   	       $ret_val = true;
   	   } else {
   	       $ret_val = false;

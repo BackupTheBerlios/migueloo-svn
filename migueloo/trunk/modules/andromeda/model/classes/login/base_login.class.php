@@ -51,10 +51,10 @@
  
  // ESTE INCLUDE ELIMINARLO YA QUE ES DE PRUEBAS
 //include_once ('../../../common/miguel_base.inc.php');
-include_once("./base_loginbase.php");
-include_once("./base_loginmd5.php");
-include_once("./base_loginplano.php");
-include_once("./base_loginmcrypt.php");
+include_once('./base_loginbase.php');
+include_once('./base_loginmd5.php');
+include_once('./base_loginplano.php');
+include_once('./base_loginmcrypt.php');
  
 class base_login
 {

@@ -38,8 +38,8 @@
  */ 
  
  // ESTE INCLUDE ELIMINARLO YA QUE ES DE PRUEBAS
-//include_once ("../../../common/miguel_base.inc.php");
-include_once(Util::app_Path("common/control/classes/base_loginbase.php"));
+//include_once ('../../../common/miguel_base.inc.php');
+include_once(Util::app_Path('common/control/classes/base_loginbase.php'));
  
 class base_loginMD5 extends base_loginBase
 {
@@ -62,7 +62,7 @@ class base_loginMD5 extends base_loginBase
   	} else {
   	   //dbg_var($ret_sql[0], __FILE__, __LINE__);
       
-  	   if($ret_sql[0]["password"] == $this->_encrypt($str_userpswd)) {
+  	   if($ret_sql[0]['password'] == $this->_encrypt($str_userpswd)) {
   	       $ret_val = true;
   	   } else {
   	       $ret_val = false;
